@@ -5,6 +5,7 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import './App.css'
+import dayjs from 'dayjs'
 
 // Fix for default marker icon
 delete L.Icon.Default.prototype._getIconUrl
@@ -64,6 +65,7 @@ function App() {
                     Edit <code>src/App.jsx</code> and save to test HMR
                 </p>
             </div>
+            <p>It is {dayjs().format('YYYY-MM-DD HH:mm:ss')}</p>
         </>
     )
 }
