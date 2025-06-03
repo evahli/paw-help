@@ -62,15 +62,20 @@ function App() {
             <h1>Vite + React</h1>
 
             {location && ( // wait for location before rendering map
-                <div style={{ width: '400px', height: '400px', margin: '0', border: '1px solid #000' }}>
+                <div
+                    style={{
+                        width: '400px',
+                        height: '400px',
+                        margin: '0',
+                        border: '1px solid #000',
+                    }}
+                >
                     <MapContainer
                         style={{ width: '100%', height: '100%' }}
                         center={location}
                         zoom={13}
                     >
-                        <TileLayer
-                            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                        />
+                        <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
                         <Marker position={location}>
                             <Popup>
                                 A pretty CSS3 popup. <br /> Easily customizable.
@@ -85,8 +90,20 @@ function App() {
                     Edit <code>src/App.jsx</code> and save to test HMR
                 </p>
             </div>
-            <p>It is {dayjs().format('YYYY-MM-DD HH:mm:ss')}</p>
-            <p>Location: {location?.latitude}, {location?.longitude}</p>
+            <div className="flex flex-col items-center justify-center gap-1">
+                <span className="text-sm text-gray-500">
+                    It is {dayjs().format('YYYY-MM-DD HH:mm:ss')}
+                </span>
+                <span className="text-sm text-gray-500">
+                    Location: {location?.latitude}, {location?.longitude}
+                </span>
+                <a
+                    href="tel:123456789"
+                    className="bg-blue-600 text-white hover:bg-blue-500 rounded-md p-2"
+                >
+                    Test Call
+                </a>
+            </div>
         </>
     )
 }
