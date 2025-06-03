@@ -27,7 +27,7 @@ const getLocation = async (setLocation) => {
     }
 }
 
-function App() {
+export const App = () => {
     const [count, setCount] = useState(0)
     const [location, setLocation] = useState(null)
 
@@ -95,17 +95,23 @@ function App() {
                     It is {dayjs().format('YYYY-MM-DD HH:mm:ss')}
                 </span>
                 <span className="text-sm text-gray-500">
-                    Location: {location?.latitude}, {location?.longitude}
+                    Location: {location?.[0]}, {location?.[1]}
                 </span>
-                <a
-                    href="tel:123456789"
-                    className="bg-blue-600 text-white hover:bg-blue-500 rounded-md p-2"
-                >
-                    Test Call
-                </a>
+                <div className="flex flex-row gap-1">
+                    <a
+                        href="tel:123456789"
+                        className="bg-blue-600 text-white hover:bg-blue-500 rounded-md p-2"
+                    >
+                        Test Call
+                    </a>
+                    <a
+                        href="https://maps.google.com/maps?daddr=50.081343,14.4253195"
+                        className="bg-blue-600 text-white hover:bg-blue-500 rounded-md p-2"
+                    >
+                        Visit Apify
+                    </a>
+                </div>
             </div>
         </>
     )
 }
-
-export default App
