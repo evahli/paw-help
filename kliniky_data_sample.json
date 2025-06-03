@@ -1,0 +1,1167 @@
+[
+    {
+    "title": "Veterinární Výjezdy - MVDr. Evžen Šonský",
+    "price": null,
+    "categoryName": "Veterinář",
+    "address": "Králodvorská 1084, 110 00 Staré Město, Česko",
+    "neighborhood": null,
+    "street": "Králodvorská 1084",
+    "city": "Staré Město",
+    "postalCode": "110 00",
+    "state": null,
+    "countryCode": "CZ",
+    "website": "http://www.veterinarni-vyjezdy.eu/",
+    "phone": "+420 723 285 820",
+    "phoneUnformatted": "+420723285820",
+    "claimThisBusiness": true,
+    "location": {
+      "lat": 50.0883851,
+      "lng": 14.4273802
+    },
+    "totalScore": 4.7,
+    "permanentlyClosed": false,
+    "temporarilyClosed": false,
+    "placeId": "ChIJCZiV-OqUC0cR-19pArCw05U",
+    "categories": [
+      "Veterinář"
+    ],
+    "fid": "0x470b94eaf8959809:0x95d3b0b002695ffb",
+    "cid": "10796167001738403835",
+    "reviewsCount": 13,
+    "imagesCount": 3,
+    "imageCategories": [],
+    "scrapedAt": "2025-05-28T19:59:06.236Z",
+    "googleFoodUrl": null,
+    "hotelAds": [],
+    "openingHours": [
+      {
+        "day": "středa",
+        "hours": "9 to 20"
+      },
+      {
+        "day": "čtvrtek",
+        "hours": "9 to 20"
+      },
+      {
+        "day": "pátek",
+        "hours": "9 to 20"
+      },
+      {
+        "day": "sobota",
+        "hours": "9 to 17"
+      },
+      {
+        "day": "neděle",
+        "hours": "Zavřeno"
+      },
+      {
+        "day": "pondělí",
+        "hours": "9 to 20"
+      },
+      {
+        "day": "úterý",
+        "hours": "9 to 20"
+      }
+    ],
+    "peopleAlsoSearch": [],
+    "placesTags": [],
+    "reviewsTags": [],
+    "gasPrices": [],
+    "url": "https://www.google.com/maps/search/?api=1&query=Veterin%C3%A1rn%C3%AD%20V%C3%BDjezdy%20-%20MVDr.%20Ev%C5%BEen%20%C5%A0onsk%C3%BD&query_place_id=ChIJCZiV-OqUC0cR-19pArCw05U",
+    "searchPageUrl": "https://www.google.com/maps/search/veterina%20/@50.08167676108138,14.431408679048374,15z?hl=cs",
+    "searchString": "veterina ",
+    "language": "cs",
+    "rank": 14,
+    "imageUrl": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nof2WeJWcCsHWQ9jJSct6Nsfut1rAyBKVu6N4IXiw_ncqCV7QTYUs5aV9Fn3c7fu6ImVI7wuMFC-bricnKj50LmjLAEtmvSq4kUamhF7OaWn5m9C2idp8-3Yfbo31QEPRMmSOYC=w408-h725-k-no",
+    "kgmid": "/g/12qfrj_8n"
+  },
+  {
+    "title": "Veterinární Výjezdy",
+    "price": null,
+    "categoryName": "Veterinář",
+    "address": "Varnsdorfská 346, 190 00 Praha 9, Česko",
+    "neighborhood": null,
+    "street": "Varnsdorfská 346",
+    "city": "Praha 9",
+    "postalCode": "190 00",
+    "state": null,
+    "countryCode": "CZ",
+    "website": "http://www.veterinarka.cz/",
+    "phone": "+420 603 273 800",
+    "phoneUnformatted": "+420603273800",
+    "claimThisBusiness": true,
+    "location": {
+      "lat": 50.1264745,
+      "lng": 14.4960395
+    },
+    "totalScore": 5,
+    "permanentlyClosed": false,
+    "temporarilyClosed": false,
+    "placeId": "ChIJr12enZfsC0cRjTu-Yyc_Yvg",
+    "categories": [
+      "Veterinář",
+      "vyjezdy"
+    ],
+    "fid": "0x470bec979d9e5daf:0xf8623f2763be3b8d",
+    "cid": "17897937307533458317",
+    "reviewsCount": 2,
+    "imagesCount": 1,
+    "imageCategories": [],
+    "scrapedAt": "2025-05-28T19:57:39.706Z",
+    "googleFoodUrl": null,
+    "hotelAds": [],
+    "openingHours": [],
+    "peopleAlsoSearch": [],
+    "placesTags": [],
+    "reviewsTags": [],
+    "gasPrices": [],
+    "url": "https://www.google.com/maps/search/?api=1&query=Veterin%C3%A1rn%C3%AD%20V%C3%BDjezdy&query_place_id=ChIJr12enZfsC0cRjTu-Yyc_Yvg",
+    "searchPageUrl": "https://www.google.com/maps/search/veterina%20/@50.12569958324417,14.534015941903252,15z?hl=cs",
+    "searchString": "veterina ",
+    "language": "cs",
+    "rank": 17,
+    "imageUrl": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=ulDVtPkaylCPdAr2Ptof9g&cb_client=search.gws-prod.gps&w=408&h=240&yaw=124.252655&pitch=0&thumbfov=100",
+    "kgmid": "/g/1v3klspv"
+  },{
+    "title": "Veterinární ordinace U stříbrné kočičky",
+    "price": null,
+    "categoryName": "Veterinární péče",
+    "address": "Blažkova 166, 104 00 Praha 10, Česko",
+    "neighborhood": null,
+    "street": "Blažkova 166",
+    "city": "Praha 10",
+    "postalCode": "104 00",
+    "state": null,
+    "countryCode": "CZ",
+    "website": "http://www.vetukocicky.cz/formular.php",
+    "phone": "+420 604 888 578",
+    "phoneUnformatted": "+420604888578",
+    "claimThisBusiness": false,
+    "location": {
+      "lat": 50.0475556,
+      "lng": 14.6262887
+    },
+    "totalScore": 5,
+    "permanentlyClosed": false,
+    "temporarilyClosed": false,
+    "placeId": "ChIJk3lnqPmMC0cRWSeM9KBpKs4",
+    "categories": [
+      "Veterinární péče",
+      "vyjezdy"
+    ],
+    "fid": "0x470b8cf9a8677993:0xce2a69a0f48c2759",
+    "cid": "14855802460853512025",
+    "reviewsCount": 1,
+    "imagesCount": 1,
+    "imageCategories": [],
+    "scrapedAt": "2025-05-28T19:57:42.690Z",
+    "googleFoodUrl": null,
+    "hotelAds": [],
+    "openingHours": [],
+    "peopleAlsoSearch": [],
+    "placesTags": [],
+    "reviewsTags": [],
+    "gasPrices": [],
+    "url": "https://www.google.com/maps/search/?api=1&query=Veterin%C3%A1rn%C3%AD%20ordinace%20U%20st%C5%99%C3%ADbrn%C3%A9%20ko%C4%8Di%C4%8Dky&query_place_id=ChIJk3lnqPmMC0cRWSeM9KBpKs4",
+    "searchPageUrl": "https://www.google.com/maps/search/veterina%20/@50.05966534999999,14.602420783806505,15z?hl=cs",
+    "searchString": "veterina ",
+    "language": "cs",
+    "rank": 1,
+    "imageUrl": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=3LTYkFPDwTXTb7Gl9URd6A&cb_client=search.gws-prod.gps&w=408&h=240&yaw=81.70174&pitch=0&thumbfov=100",
+    "kgmid": "/g/11h4djh_z4"
+  },
+  {
+    "title": "Pet-medic",
+    "price": null,
+    "categoryName": "Veterinář",
+    "address": "Beranových 130, 190 00 Praha 18, Česko",
+    "neighborhood": null,
+    "street": "Beranových 130",
+    "city": "Praha 18",
+    "postalCode": "190 00",
+    "state": null,
+    "countryCode": "CZ",
+    "website": "https://pet-medic.cz/",
+    "phone": "+420 724 184 840",
+    "phoneUnformatted": "+420724184840",
+    "claimThisBusiness": false,
+    "location": {
+      "lat": 50.1317786,
+      "lng": 14.5125284
+    },
+    "totalScore": 4.6,
+    "permanentlyClosed": false,
+    "temporarilyClosed": false,
+    "placeId": "ChIJoc1KVESTC0cR8DAd5t3fujk",
+    "categories": [
+      "Veterinář"
+    ],
+    "fid": "0x470b9344544acda1:0x39badfdde61d30f0",
+    "cid": "4159883349971513584",
+    "reviewsCount": 183,
+    "imagesCount": 3,
+    "imageCategories": [],
+    "scrapedAt": "2025-05-28T19:57:39.703Z",
+    "googleFoodUrl": null,
+    "hotelAds": [],
+    "openingHours": [
+      {
+        "day": "středa",
+        "hours": "Otevřeno 24 hodin"
+      },
+      {
+        "day": "čtvrtek",
+        "hours": "Otevřeno 24 hodin"
+      },
+      {
+        "day": "pátek",
+        "hours": "Otevřeno 24 hodin"
+      },
+      {
+        "day": "sobota",
+        "hours": "Otevřeno 24 hodin"
+      },
+      {
+        "day": "neděle",
+        "hours": "Otevřeno 24 hodin"
+      },
+      {
+        "day": "pondělí",
+        "hours": "Otevřeno 24 hodin"
+      },
+      {
+        "day": "úterý",
+        "hours": "Otevřeno 24 hodin"
+      }
+    ],
+    "peopleAlsoSearch": [],
+    "placesTags": [],
+    "reviewsTags": [],
+    "additionalInfo": {
+      "Dostupnost": [
+        {
+          "Bezbariérové parkování": true
+        },
+        {
+          "Bezbariérový vstup": true
+        }
+      ],
+      "Vybavení": [
+        {
+          "Toaleta": true
+        }
+      ]
+    },
+    "gasPrices": [],
+    "url": "https://www.google.com/maps/search/?api=1&query=Pet-medic&query_place_id=ChIJoc1KVESTC0cR8DAd5t3fujk",
+    "searchPageUrl": "https://www.google.com/maps/search/veterina%20/@50.12569958324417,14.534015941903252,15z?hl=cs",
+    "searchString": "veterina ",
+    "language": "cs",
+    "rank": 1,
+    "imageUrl": "https://lh3.googleusercontent.com/p/AF1QipMR5CRDMJ3RLn5uq2KFXx-92aSidwb7NNHFJmMr=w619-h240-k-no",
+    "kgmid": "/g/1tmg57vf"
+  },
+  {
+    "title": "Vet-centrum Kbely s.r.o.",
+    "price": null,
+    "categoryName": "Veterinář",
+    "address": "Mladoboleslavská 22/8, 197 00 Kbely, Česko",
+    "neighborhood": null,
+    "street": "Mladoboleslavská 22/8",
+    "city": "Kbely",
+    "postalCode": "197 00",
+    "state": null,
+    "countryCode": "CZ",
+    "website": "http://www.vetcentrumkbely.cz/",
+    "phone": "+420 776 722 271",
+    "phoneUnformatted": "+420776722271",
+    "claimThisBusiness": true,
+    "location": {
+      "lat": 50.1300644,
+      "lng": 14.5466507
+    },
+    "totalScore": 4.6,
+    "permanentlyClosed": false,
+    "temporarilyClosed": false,
+    "placeId": "ChIJM9xiXgTtC0cRMg3xfyfD0c8",
+    "categories": [
+      "Veterinář",
+      "Veterinární klinika",
+      "Veterinární pohotovost"
+    ],
+    "fid": "0x470bed045e62dc33:0xcfd1c3277ff10d32",
+    "cid": "14974964810401254706",
+    "reviewsCount": 23,
+    "imagesCount": 2,
+    "imageCategories": [],
+    "scrapedAt": "2025-05-28T19:57:39.704Z",
+    "googleFoodUrl": null,
+    "hotelAds": [],
+    "openingHours": [
+      {
+        "day": "středa",
+        "hours": "9 to 12"
+      },
+      {
+        "day": "čtvrtek",
+        "hours": "9 to 12, 15 to 18:30"
+      },
+      {
+        "day": "pátek",
+        "hours": "9 to 12"
+      },
+      {
+        "day": "sobota",
+        "hours": "9 to 12"
+      },
+      {
+        "day": "neděle",
+        "hours": "Zavřeno"
+      },
+      {
+        "day": "pondělí",
+        "hours": "9 to 12, 15 to 18"
+      },
+      {
+        "day": "úterý",
+        "hours": "9 to 12, 15 to 18:30"
+      }
+    ],
+    "peopleAlsoSearch": [],
+    "placesTags": [],
+    "reviewsTags": [],
+    "additionalInfo": {
+      "Dostupnost": [
+        {
+          "Bezbariérové parkování": true
+        },
+        {
+          "Bezbariérový vstup": true
+        }
+      ],
+      "Plánování": [
+        {
+          "Doporučuje se zajistit si termín": true
+        }
+      ]
+    },
+    "gasPrices": [],
+    "url": "https://www.google.com/maps/search/?api=1&query=Vet-centrum%20Kbely%20s.r.o.&query_place_id=ChIJM9xiXgTtC0cRMg3xfyfD0c8",
+    "searchPageUrl": "https://www.google.com/maps/search/veterina%20/@50.12569958324417,14.534015941903252,15z?hl=cs",
+    "searchString": "veterina ",
+    "language": "cs",
+    "rank": 2,
+    "imageUrl": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=bZMX0CbQE1lZOQE8wVIeDQ&cb_client=search.gws-prod.gps&w=408&h=240&yaw=146.6907&pitch=0&thumbfov=100",
+    "kgmid": "/g/1tk21n86"
+  },
+  {
+    "title": "Doc.MVDr.CSc. František Jelínek",
+    "price": null,
+    "categoryName": "Veterinář",
+    "address": "Sojovická 352, 197 00 Praha 19, Česko",
+    "neighborhood": null,
+    "street": "Sojovická 352",
+    "city": "Praha 19",
+    "postalCode": "197 00",
+    "state": null,
+    "countryCode": "CZ",
+    "phone": "+420 286 851 765",
+    "phoneUnformatted": "+420286851765",
+    "claimThisBusiness": true,
+    "location": {
+      "lat": 50.1299413,
+      "lng": 14.5535129
+    },
+    "totalScore": 4.5,
+    "permanentlyClosed": false,
+    "temporarilyClosed": false,
+    "placeId": "ChIJ5U6noQXtC0cRx9wvA4Cj1NU",
+    "categories": [
+      "Veterinář"
+    ],
+    "fid": "0x470bed05a1a74ee5:0xd5d4a380032fdcc7",
+    "cid": "15408119995345919175",
+    "reviewsCount": 4,
+    "imagesCount": 1,
+    "imageCategories": [],
+    "scrapedAt": "2025-05-28T19:57:39.704Z",
+    "googleFoodUrl": null,
+    "hotelAds": [],
+    "openingHours": [],
+    "peopleAlsoSearch": [],
+    "placesTags": [],
+    "reviewsTags": [],
+    "gasPrices": [],
+    "url": "https://www.google.com/maps/search/?api=1&query=Doc.MVDr.CSc.%20Franti%C5%A1ek%20Jel%C3%ADnek&query_place_id=ChIJ5U6noQXtC0cRx9wvA4Cj1NU",
+    "searchPageUrl": "https://www.google.com/maps/search/veterina%20/@50.12569958324417,14.534015941903252,15z?hl=cs",
+    "searchString": "veterina ",
+    "language": "cs",
+    "rank": 4,
+    "imageUrl": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=VMGoIL0D7XZ0sct_Yilu6A&cb_client=search.gws-prod.gps&w=408&h=240&yaw=99.63187&pitch=0&thumbfov=100",
+    "kgmid": "/g/11bc7pq06d"
+  },
+  {
+    "title": "VETERINÁRNÍ KLINIKA HLOUBĚTÍN s. r. o.",
+    "price": null,
+    "categoryName": "Veterinář",
+    "address": "Mochovská 535/38, 198 00 Praha 14, Česko",
+    "neighborhood": null,
+    "street": "Mochovská 535/38",
+    "city": "Praha 14",
+    "postalCode": "198 00",
+    "state": null,
+    "countryCode": "CZ",
+    "website": "https://www.veterinahloubetin.cz/",
+    "phone": "+420 281 863 796",
+    "phoneUnformatted": "+420281863796",
+    "claimThisBusiness": false,
+    "location": {
+      "lat": 50.1069901,
+      "lng": 14.537373
+    },
+    "totalScore": 4.4,
+    "permanentlyClosed": false,
+    "temporarilyClosed": false,
+    "placeId": "ChIJZV5XRi_tC0cRkbec-9C7234",
+    "categories": [
+      "Veterinář",
+      "Veterinární pohotovost",
+      "Veterinární klinika"
+    ],
+    "fid": "0x470bed2f46575e65:0x7edbbbd0fb9cb791",
+    "cid": "9141106374927497105",
+    "reviewsCount": 340,
+    "imagesCount": 39,
+    "imageCategories": [],
+    "scrapedAt": "2025-05-28T19:57:39.705Z",
+    "googleFoodUrl": null,
+    "hotelAds": [],
+    "openingHours": [
+      {
+        "day": "středa",
+        "hours": "8 to 19"
+      },
+      {
+        "day": "čtvrtek",
+        "hours": "8 to 19"
+      },
+      {
+        "day": "pátek",
+        "hours": "8 to 19"
+      },
+      {
+        "day": "sobota",
+        "hours": "8 to 12"
+      },
+      {
+        "day": "neděle",
+        "hours": "18 to 20"
+      },
+      {
+        "day": "pondělí",
+        "hours": "8 to 19"
+      },
+      {
+        "day": "úterý",
+        "hours": "8 to 19"
+      }
+    ],
+    "peopleAlsoSearch": [],
+    "placesTags": [],
+    "reviewsTags": [],
+    "additionalInfo": {
+      "Možnosti služeb": [
+        {
+          "Služby na místě": true
+        }
+      ],
+      "Dostupnost": [
+        {
+          "Bezbariérové parkování": true
+        },
+        {
+          "Bezbariérové posezení": true
+        },
+        {
+          "Bezbariérový vstup": true
+        },
+        {
+          "Toalety s bezbariérovým přístupem": true
+        }
+      ],
+      "Vybavení": [
+        {
+          "Toaleta": true
+        }
+      ],
+      "Návštěvníci": [
+        {
+          "LGBTQ+ friendly": true
+        }
+      ],
+      "Plánování": [
+        {
+          "Doporučuje se zajistit si termín": true
+        }
+      ]
+    },
+    "gasPrices": [],
+    "url": "https://www.google.com/maps/search/?api=1&query=VETERIN%C3%81RN%C3%8D%20KLINIKA%20HLOUB%C4%9AT%C3%8DN%20s.%20r.%20o.&query_place_id=ChIJZV5XRi_tC0cRkbec-9C7234",
+    "searchPageUrl": "https://www.google.com/maps/search/veterina%20/@50.12569958324417,14.534015941903252,15z?hl=cs",
+    "searchString": "veterina ",
+    "language": "cs",
+    "rank": 8,
+    "imageUrl": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrBWNBBBwbudAKExUNl1qP6ZafLoBJW0voh6-oEklQmEJlcNmqFM1RjJLmBlF3edDdGSOjAf4xB-1s2JaQyRrwEfGBYIXH0O7X1Ciu8FrOjI-Q_5etVisRFvE8TSMgaQ13GTvE9eQ=w408-h544-k-no",
+    "kgmid": "/g/1td36z72"
+  },
+  {
+    "title": "Vetdomu MVDr. Eliška Singerová",
+    "price": null,
+    "categoryName": "Veterinář",
+    "address": "V Bytovkách 1025/62, 104 00 Praha 22, Česko",
+    "neighborhood": null,
+    "street": "V Bytovkách 1025/62",
+    "city": "Praha 22",
+    "postalCode": "104 00",
+    "state": null,
+    "countryCode": "CZ",
+    "website": "https://www.vetdomu.cz/",
+    "phone": "+420 725 888 002",
+    "phoneUnformatted": "+420725888002",
+    "claimThisBusiness": false,
+    "location": {
+      "lat": 50.038837,
+      "lng": 14.597058
+    },
+    "totalScore": 5,
+    "permanentlyClosed": false,
+    "temporarilyClosed": false,
+    "placeId": "ChIJRaN3IY9HYaoRPeEhfKXfCnc",
+    "categories": [
+      "Veterinář",
+      "vyjezdy"
+    ],
+    "fid": "0xaa61478f2177a345:0x770adfa57c21e13d",
+    "cid": "8577914342125723965",
+    "reviewsCount": 12,
+    "imagesCount": 5,
+    "imageCategories": [],
+    "scrapedAt": "2025-05-28T19:57:42.691Z",
+    "googleFoodUrl": null,
+    "hotelAds": [],
+    "openingHours": [
+      {
+        "day": "středa",
+        "hours": "7 to 18"
+      },
+      {
+        "day": "čtvrtek",
+        "hours": "7 to 18"
+      },
+      {
+        "day": "pátek",
+        "hours": "7 to 18"
+      },
+      {
+        "day": "sobota",
+        "hours": "Zavřeno"
+      },
+      {
+        "day": "neděle",
+        "hours": "Zavřeno"
+      },
+      {
+        "day": "pondělí",
+        "hours": "7 to 18"
+      },
+      {
+        "day": "úterý",
+        "hours": "7 to 18"
+      }
+    ],
+    "peopleAlsoSearch": [],
+    "placesTags": [],
+    "reviewsTags": [],
+    "additionalInfo": {
+      "Dostupnost": [
+        {
+          "Bezbariérové posezení": false
+        },
+        {
+          "Indukční smyčka pro nedoslýchavé": false
+        },
+        {
+          "Toalety s bezbariérovým přístupem": false
+        }
+      ]
+    },
+    "gasPrices": [],
+    "url": "https://www.google.com/maps/search/?api=1&query=Vetdomu%20MVDr.%20Eli%C5%A1ka%20Singerov%C3%A1&query_place_id=ChIJRaN3IY9HYaoRPeEhfKXfCnc",
+    "searchPageUrl": "https://www.google.com/maps/search/veterina%20/@50.05966534999999,14.602420783806505,15z?hl=cs",
+    "searchString": "veterina ",
+    "language": "cs",
+    "rank": 5,
+    "imageUrl": "https://lh3.googleusercontent.com/p/AF1QipNG_CvHCo9lF5KdvazHyeef9t7m3MPQKG8882E=w408-h544-k-no",
+    "kgmid": "/g/11wpztflyx"
+  },
+  {
+    "title": "Veterina Visvet - MVDr. Peter Dobrík",
+    "price": null,
+    "categoryName": "Veterinář",
+    "address": "Domkovská 1484, 193 00 Praha 20, Česko",
+    "neighborhood": null,
+    "street": "Domkovská 1484",
+    "city": "Praha 20",
+    "postalCode": "193 00",
+    "state": null,
+    "countryCode": "CZ",
+    "website": "http://www.visvet.cz/",
+    "phone": "+420 777 762 077",
+    "phoneUnformatted": "+420777762077",
+    "claimThisBusiness": false,
+    "location": {
+      "lat": 50.1053533,
+      "lng": 14.6101177
+    },
+    "totalScore": 4.6,
+    "permanentlyClosed": false,
+    "temporarilyClosed": false,
+    "placeId": "ChIJ_TWTvb7yC0cRe_YYhSNLXNo",
+    "categories": [
+      "Veterinář"
+    ],
+    "fid": "0x470bf2bebd9335fd:0xda5c4b238518f67b",
+    "cid": "15734533814054614651",
+    "reviewsCount": 146,
+    "imagesCount": 14,
+    "imageCategories": [],
+    "scrapedAt": "2025-05-28T19:57:42.691Z",
+    "googleFoodUrl": null,
+    "hotelAds": [],
+    "openingHours": [
+      {
+        "day": "středa",
+        "hours": "Otevřeno 24 hodin"
+      },
+      {
+        "day": "čtvrtek",
+        "hours": "Otevřeno 24 hodin"
+      },
+      {
+        "day": "pátek",
+        "hours": "Otevřeno 24 hodin"
+      },
+      {
+        "day": "sobota",
+        "hours": "Otevřeno 24 hodin"
+      },
+      {
+        "day": "neděle",
+        "hours": "Otevřeno 24 hodin"
+      },
+      {
+        "day": "pondělí",
+        "hours": "Otevřeno 24 hodin"
+      },
+      {
+        "day": "úterý",
+        "hours": "Otevřeno 24 hodin"
+      }
+    ],
+    "peopleAlsoSearch": [],
+    "placesTags": [],
+    "reviewsTags": [],
+    "additionalInfo": {
+      "Plánování": [
+        {
+          "Doporučuje se zajistit si termín": true
+        }
+      ]
+    },
+    "gasPrices": [],
+    "url": "https://www.google.com/maps/search/?api=1&query=Veterina%20Visvet%20-%20MVDr.%20Peter%20Dobr%C3%ADk&query_place_id=ChIJ_TWTvb7yC0cRe_YYhSNLXNo",
+    "searchPageUrl": "https://www.google.com/maps/search/veterina%20/@50.05966534999999,14.602420783806505,15z?hl=cs",
+    "searchString": "veterina ",
+    "language": "cs",
+    "rank": 10,
+    "imageUrl": "https://lh3.googleusercontent.com/p/AF1QipM9giCt4yFcite5eLUME1q7uQZN32sdI9sq1zL9=w408-h271-k-no",
+    "kgmid": "/g/11d_xl4rhs"
+  },
+  {
+    "title": "MVDr. Václav Čížek",
+    "price": null,
+    "categoryName": "Veterinář",
+    "address": "V Průčelí 1652/6, 149 00 Praha 11-Chodov, Česko",
+    "neighborhood": null,
+    "street": "V Průčelí 1652/6",
+    "city": "Praha 11-Chodov",
+    "postalCode": "149 00",
+    "state": null,
+    "countryCode": "CZ",
+    "website": "http://www.veterinapruceli.cz/",
+    "phone": "+420 702 050 856",
+    "phoneUnformatted": "+420702050856",
+    "claimThisBusiness": false,
+    "location": {
+      "lat": 50.0324852,
+      "lng": 14.5092777
+    },
+    "totalScore": 4.9,
+    "permanentlyClosed": false,
+    "temporarilyClosed": false,
+    "placeId": "ChIJRWdh2zuSC0cRCbatHjZaw5Y",
+    "categories": [
+      "Veterinář"
+    ],
+    "fid": "0x470b923bdb616745:0x96c35a361eadb609",
+    "cid": "10863625914637202953",
+    "reviewsCount": 239,
+    "imagesCount": 11,
+    "imageCategories": [],
+    "scrapedAt": "2025-05-28T19:57:43.021Z",
+    "googleFoodUrl": null,
+    "hotelAds": [],
+    "openingHours": [
+      {
+        "day": "středa",
+        "hours": "9 to 12, 14 to 19"
+      },
+      {
+        "day": "čtvrtek",
+        "hours": "9 to 12, 14 to 19"
+      },
+      {
+        "day": "pátek",
+        "hours": "9 to 12, 14 to 16"
+      },
+      {
+        "day": "sobota",
+        "hours": "Zavřeno"
+      },
+      {
+        "day": "neděle",
+        "hours": "Zavřeno"
+      },
+      {
+        "day": "pondělí",
+        "hours": "9 to 12, 14 to 19"
+      },
+      {
+        "day": "úterý",
+        "hours": "9 to 12, 14 to 19"
+      }
+    ],
+    "peopleAlsoSearch": [],
+    "placesTags": [],
+    "reviewsTags": [],
+    "additionalInfo": {
+      "Vybavení": [
+        {
+          "Toaleta": false
+        }
+      ]
+    },
+    "gasPrices": [],
+    "url": "https://www.google.com/maps/search/?api=1&query=MVDr.%20V%C3%A1clav%20%C4%8C%C3%AD%C5%BEek&query_place_id=ChIJRWdh2zuSC0cRCbatHjZaw5Y",
+    "searchPageUrl": "https://www.google.com/maps/search/veterina%20/@50.0156425278372,14.499813520951626,15z?hl=cs",
+    "searchString": "veterina ",
+    "language": "cs",
+    "rank": 4,
+    "imageUrl": "https://lh3.googleusercontent.com/p/AF1QipNZ64dGmV5eGtXzs6GgGsBnadTKAzvhAUdFhkM1=w408-h305-k-no",
+    "kgmid": "/g/1tdwntf4"
+  },
+  {
+    "title": "Veterinární nemocnice Libuš",
+    "price": null,
+    "categoryName": "Veterinář",
+    "address": "Na šejdru 238, 142 00 Praha-Libuš, Česko",
+    "neighborhood": null,
+    "street": "Na šejdru 238",
+    "city": "Praha-Libuš",
+    "postalCode": "142 00",
+    "state": null,
+    "countryCode": "CZ",
+    "website": "http://www.vetnemo.cz/",
+    "phone": "+420 244 470 553",
+    "phoneUnformatted": "+420244470553",
+    "claimThisBusiness": false,
+    "location": {
+      "lat": 50.0084083,
+      "lng": 14.4587471
+    },
+    "totalScore": 3.5,
+    "permanentlyClosed": false,
+    "temporarilyClosed": false,
+    "placeId": "ChIJQ03rfW6RC0cRftagrPBxgwY",
+    "categories": [
+      "Veterinář",
+      "Veterinární klinika",
+      "Veterinární pohotovost"
+    ],
+    "fid": "0x470b916e7deb4d43:0x68371f0aca0d67e",
+    "cid": "469344064678975102",
+    "reviewsCount": 145,
+    "imagesCount": 43,
+    "imageCategories": [],
+    "scrapedAt": "2025-05-28T19:57:43.021Z",
+    "googleFoodUrl": null,
+    "hotelAds": [],
+    "openingHours": [
+      {
+        "day": "středa",
+        "hours": "Otevřeno 24 hodin"
+      },
+      {
+        "day": "čtvrtek",
+        "hours": "Otevřeno 24 hodin"
+      },
+      {
+        "day": "pátek",
+        "hours": "Otevřeno 24 hodin"
+      },
+      {
+        "day": "sobota",
+        "hours": "Otevřeno 24 hodin"
+      },
+      {
+        "day": "neděle",
+        "hours": "Otevřeno 24 hodin"
+      },
+      {
+        "day": "pondělí",
+        "hours": "Otevřeno 24 hodin"
+      },
+      {
+        "day": "úterý",
+        "hours": "Otevřeno 24 hodin"
+      }
+    ],
+    "peopleAlsoSearch": [],
+    "placesTags": [],
+    "reviewsTags": [],
+    "additionalInfo": {
+      "Dostupnost": [
+        {
+          "Bezbariérové parkování": true
+        },
+        {
+          "Bezbariérový vstup": true
+        },
+        {
+          "Toalety s bezbariérovým přístupem": true
+        }
+      ],
+      "Vybavení": [
+        {
+          "Toaleta": true
+        }
+      ],
+      "Plánování": [
+        {
+          "Doporučuje se zajistit si termín": true
+        }
+      ]
+    },
+    "gasPrices": [],
+    "url": "https://www.google.com/maps/search/?api=1&query=Veterin%C3%A1rn%C3%AD%20nemocnice%20Libu%C5%A1&query_place_id=ChIJQ03rfW6RC0cRftagrPBxgwY",
+    "searchPageUrl": "https://www.google.com/maps/search/veterina%20/@50.0156425278372,14.499813520951626,15z?hl=cs",
+    "searchString": "veterina ",
+    "language": "cs",
+    "rank": 5,
+    "imageUrl": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqvWD0zjVU79jFtk8jcm1wMJUBTyUx81w7kxGLkgpWixH5CV6ci0hLZ0AvKNJ5zagktDbKoun1voEaQI9SH3Byk55cmJiKTprrst7uRLPxfzUA068baF84QpibEGGe3DyOsnWNswg=w408-h272-k-no",
+    "kgmid": "/g/1tdw25ky"
+  },
+  {
+    "title": "Veterinární klinika IVET",
+    "price": null,
+    "categoryName": "Veterinář",
+    "address": "3, Ke Kamýku 996, 140 00 Praha 4, Česko",
+    "neighborhood": null,
+    "street": "3, Ke Kamýku 996",
+    "city": "Praha 4",
+    "postalCode": "140 00",
+    "state": null,
+    "countryCode": "CZ",
+    "website": "https://www.veterinarni-klinika.net/",
+    "phone": "+420 241 714 358",
+    "phoneUnformatted": "+420241714358",
+    "claimThisBusiness": false,
+    "location": {
+      "lat": 50.0157228,
+      "lng": 14.4462823
+    },
+    "totalScore": 4.1,
+    "permanentlyClosed": false,
+    "temporarilyClosed": false,
+    "placeId": "ChIJvVTNx1yRC0cRUO0nOuAdYkQ",
+    "categories": [
+      "Veterinář",
+      "Veterinární pohotovost",
+      "Veterinární klinika"
+    ],
+    "fid": "0x470b915cc7cd54bd:0x44621de03a27ed50",
+    "cid": "4927533791182318928",
+    "reviewsCount": 282,
+    "imagesCount": 63,
+    "imageCategories": [],
+    "scrapedAt": "2025-05-28T19:57:43.021Z",
+    "googleFoodUrl": null,
+    "hotelAds": [],
+    "openingHours": [
+      {
+        "day": "středa",
+        "hours": "Otevřeno 24 hodin"
+      },
+      {
+        "day": "čtvrtek",
+        "hours": "Otevřeno 24 hodin"
+      },
+      {
+        "day": "pátek",
+        "hours": "Otevřeno 24 hodin"
+      },
+      {
+        "day": "sobota",
+        "hours": "Otevřeno 24 hodin"
+      },
+      {
+        "day": "neděle",
+        "hours": "Otevřeno 24 hodin"
+      },
+      {
+        "day": "pondělí",
+        "hours": "Otevřeno 24 hodin"
+      },
+      {
+        "day": "úterý",
+        "hours": "Otevřeno 24 hodin"
+      }
+    ],
+    "peopleAlsoSearch": [],
+    "placesTags": [],
+    "reviewsTags": [],
+    "additionalInfo": {
+      "Z firmy": [
+        {
+          "Označeno jako „vlastněno ženami“": true
+        }
+      ],
+      "Dostupnost": [
+        {
+          "Bezbariérové parkování": true
+        },
+        {
+          "Bezbariérový vstup": true
+        },
+        {
+          "Toalety s bezbariérovým přístupem": true
+        }
+      ],
+      "Vybavení": [
+        {
+          "Toaleta": true
+        }
+      ],
+      "Plánování": [
+        {
+          "Doporučuje se zajistit si termín": true
+        }
+      ]
+    },
+    "gasPrices": [],
+    "url": "https://www.google.com/maps/search/?api=1&query=Veterin%C3%A1rn%C3%AD%20klinika%20IVET&query_place_id=ChIJvVTNx1yRC0cRUO0nOuAdYkQ",
+    "searchPageUrl": "https://www.google.com/maps/search/veterina%20/@50.0156425278372,14.499813520951626,15z?hl=cs",
+    "searchString": "veterina ",
+    "language": "cs",
+    "rank": 7,
+    "imageUrl": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nruhujo0XOc2D75vH_etnlM1llznCxwEewKoxMKt7c1SAxbwJG9O2tFO9zqkpRJ5fSGVJMcJRcjtABm-k7QvCkaGqrdIF0Okpj4CRUHK8GVi-hIriNnMpr0wuUINDckRyWc3DzQbg=w424-h240-k-no",
+    "kgmid": "/g/1tf22t69"
+  },
+  {
+    "title": "Veterinární klinika Well-vet s.r.o.",
+    "price": null,
+    "categoryName": "Veterinář",
+    "address": "Hrusická 2616/3, 141 00 Záběhlice (Spořilov), Česko",
+    "neighborhood": null,
+    "street": "Hrusická 2616/3",
+    "city": "Záběhlice (Spořilov)",
+    "postalCode": "141 00",
+    "state": null,
+    "countryCode": "CZ",
+    "website": "http://www.well-vet.cz/",
+    "phone": "+420 272 769 306",
+    "phoneUnformatted": "+420272769306",
+    "claimThisBusiness": false,
+    "location": {
+      "lat": 50.0485698,
+      "lng": 14.4846684
+    },
+    "totalScore": 4.7,
+    "permanentlyClosed": false,
+    "temporarilyClosed": false,
+    "placeId": "ChIJB5UYjrCTC0cR-CbGwintCo8",
+    "categories": [
+      "Veterinář",
+      "Veterinární pohotovost"
+    ],
+    "fid": "0x470b93b08e189507:0x8f0aed29c2c626f8",
+    "cid": "10307311460808009464",
+    "reviewsCount": 132,
+    "imagesCount": 18,
+    "imageCategories": [],
+    "scrapedAt": "2025-05-28T19:57:43.021Z",
+    "googleFoodUrl": null,
+    "hotelAds": [],
+    "openingHours": [
+      {
+        "day": "středa",
+        "hours": "8 to 12, 14 to 20"
+      },
+      {
+        "day": "čtvrtek",
+        "hours": "8 to 12, 14 to 20"
+      },
+      {
+        "day": "pátek",
+        "hours": "8 to 12, 14 to 20"
+      },
+      {
+        "day": "sobota",
+        "hours": "9 to 12"
+      },
+      {
+        "day": "neděle",
+        "hours": "16 to 19"
+      },
+      {
+        "day": "pondělí",
+        "hours": "8 to 12, 14 to 20"
+      },
+      {
+        "day": "úterý",
+        "hours": "8 to 12, 14 to 20"
+      }
+    ],
+    "peopleAlsoSearch": [],
+    "placesTags": [],
+    "reviewsTags": [],
+    "additionalInfo": {
+      "Dostupnost": [
+        {
+          "Bezbariérový vstup": true
+        },
+        {
+          "Toalety s bezbariérovým přístupem": true
+        }
+      ],
+      "Vybavení": [
+        {
+          "Toaleta": true
+        }
+      ]
+    },
+    "gasPrices": [],
+    "url": "https://www.google.com/maps/search/?api=1&query=Veterin%C3%A1rn%C3%AD%20klinika%20Well-vet%20s.r.o.&query_place_id=ChIJB5UYjrCTC0cR-CbGwintCo8",
+    "searchPageUrl": "https://www.google.com/maps/search/veterina%20/@50.0156425278372,14.499813520951626,15z?hl=cs",
+    "searchString": "veterina ",
+    "language": "cs",
+    "rank": 15,
+    "imageUrl": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npYAhCmkJT8VRybi7iQYqCnRGRajywY4uc01M6aCY36D5_0RgdfPoPvThzXDlPBnSlT09SDn6hKCpunV6HeqiQFuZcsD7gxJ1NBA0hRPjaq3lw4XqB9YMwIL4UUwXtxWJsTzv6_=w426-h240-k-no",
+    "kgmid": "/g/1thq8kv3"
+  },
+  {
+    "title": "PremiumVet Letná veterinární klinika",
+    "price": null,
+    "categoryName": "Veterinární klinika",
+    "address": "M. Horákové 846/94, 170 00 Praha 7-Bubeneč, Česko",
+    "neighborhood": null,
+    "street": "M. Horákové 846/94",
+    "city": "Praha 7-Bubeneč",
+    "postalCode": "170 00",
+    "state": null,
+    "countryCode": "CZ",
+    "website": "http://premiumvet.cz/",
+    "phone": "+420 777 002 121",
+    "phoneUnformatted": "+420777002121",
+    "claimThisBusiness": false,
+    "location": {
+      "lat": 50.0994073,
+      "lng": 14.4177923
+    },
+    "totalScore": 4.7,
+    "permanentlyClosed": false,
+    "temporarilyClosed": false,
+    "placeId": "ChIJ_RV0ajmVC0cRWT1i4a-AoPU",
+    "categories": [
+      "Veterinární klinika"
+    ],
+    "fid": "0x470b95396a7415fd:0xf5a080afe1623d59",
+    "cid": "17699288028454993241",
+    "reviewsCount": 152,
+    "reviewsDistribution": {
+      "oneStar": 7,
+      "twoStar": 1,
+      "threeStar": 2,
+      "fourStar": 5,
+      "fiveStar": 137
+    },
+    "imagesCount": 51,
+    "imageCategories": [],
+    "scrapedAt": "2025-05-28T19:58:32.115Z",
+    "googleFoodUrl": null,
+    "hotelAds": [],
+    "openingHours": [
+      {
+        "day": "středa",
+        "hours": "8 to 20"
+      },
+      {
+        "day": "čtvrtek",
+        "hours": "8 to 20"
+      },
+      {
+        "day": "pátek",
+        "hours": "8 to 20"
+      },
+      {
+        "day": "sobota",
+        "hours": "10 to 16"
+      },
+      {
+        "day": "neděle",
+        "hours": "10 to 16"
+      },
+      {
+        "day": "pondělí",
+        "hours": "8 to 20"
+      },
+      {
+        "day": "úterý",
+        "hours": "8 to 20"
+      }
+    ],
+    "peopleAlsoSearch": [],
+    "placesTags": [],
+    "reviewsTags": [],
+    "additionalInfo": {
+      "Vybavení": [
+        {
+          "Toaleta": true
+        }
+      ],
+      "Plánování": [
+        {
+          "Doporučuje se zajistit si termín": true
+        }
+      ]
+    },
+    "gasPrices": [],
+    "url": "https://www.google.com/maps/search/?api=1&query=PremiumVet%20Letn%C3%A1%20veterin%C3%A1rn%C3%AD%20klinika&query_place_id=ChIJ_RV0ajmVC0cRWT1i4a-AoPU",
+    "searchPageUrl": "https://www.google.com/maps/search/veterina%20/@50.10368817216278,14.397206258096748,15z?hl=cs",
+    "searchString": "veterina ",
+    "language": "cs",
+    "rank": 23,
+    "imageUrl": "https://lh3.googleusercontent.com/p/AF1QipN4KUxswE5OAtq3yr0u2Y_HKVqRrB7GKt6QBcXw=w408-h272-k-no",
+    "kgmid": "/g/11p67d9lfn"
+  }
+]
