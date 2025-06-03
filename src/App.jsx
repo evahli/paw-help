@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
@@ -15,8 +15,25 @@ L.Icon.Default.mergeOptions({
     shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
 })
 
+const getLocation = async (setLocation) => {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition((position) => {
+            setLocation([position.coords.latitude, position.coords.longitude])
+        }, (error) => {
+            console.log(error)
+        })
+    } else {
+        console.log('Geolocation not supported')
+    }
+}
+
 function App() {
     const [count, setCount] = useState(0)
+    const [location, setLocation] = useState(null)
+
+    useEffect(() => {
+        getLocation(setLocation)
+    }, [])
 
     return (
         <>
@@ -43,22 +60,25 @@ function App() {
                 </a>
             </div>
             <h1>Vite + React</h1>
-            <div style={{ width: '400px', height: '400px', margin: '0', border: '1px solid #000' }}>
-                <MapContainer
-                    style={{ width: '100%', height: '100%' }}
-                    center={[51.505, -0.09]}
-                    zoom={13}
-                >
-                    <TileLayer
-                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                    />
-                    <Marker position={[51.505, -0.09]}>
-                        <Popup>
-                            A pretty CSS3 popup. <br /> Easily customizable.
-                        </Popup>
-                    </Marker>
-                </MapContainer>
-            </div>
+
+            {location && ( // wait for location before rendering map
+                <div style={{ width: '400px', height: '400px', margin: '0', border: '1px solid #000' }}>
+                    <MapContainer
+                        style={{ width: '100%', height: '100%' }}
+                        center={location}
+                        zoom={13}
+                    >
+                        <TileLayer
+                            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                        />
+                        <Marker position={location}>
+                            <Popup>
+                                A pretty CSS3 popup. <br /> Easily customizable.
+                            </Popup>
+                        </Marker>
+                    </MapContainer>
+                </div>
+            )}
             <div className="card">
                 <button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
                 <p>
@@ -66,6 +86,7 @@ function App() {
                 </p>
             </div>
             <p>It is {dayjs().format('YYYY-MM-DD HH:mm:ss')}</p>
+            <p>Location: {location?.latitude}, {location?.longitude}</p>
         </>
     )
 }
