@@ -6,14 +6,8 @@ import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import './App.css'
 import dayjs from 'dayjs'
+import { Button } from '@/components/ui/button'
 
-// Fix for default marker icon
-delete L.Icon.Default.prototype._getIconUrl
-L.Icon.Default.mergeOptions({
-    iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png',
-    iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
-    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
-})
 
 const getLocation = async (setLocation) => {
     if (navigator.geolocation) {
@@ -61,7 +55,7 @@ export const App = () => {
             </div>
             <h1>Vite + React</h1>
 
-            {location && ( // wait for location before rendering map
+            {location ? ( // wait for location before rendering map
                 <div
                     style={{
                         width: '400px',
@@ -83,9 +77,9 @@ export const App = () => {
                         </Marker>
                     </MapContainer>
                 </div>
-            )}
+            ): <p> No location provided, map cannot be rendered</p>}
             <div className="card">
-                <button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
+                <Button onClick={() => setCount((count) => count + 1)}>count is {count}</Button>
                 <p>
                     Edit <code>src/App.jsx</code> and save to test HMR
                 </p>
@@ -110,6 +104,7 @@ export const App = () => {
                     >
                         Visit Apify
                     </a>
+                    <Button>I am shadcn button</Button>
                 </div>
             </div>
         </>
