@@ -75,7 +75,7 @@ export const HomePage = () => {
           >
             Visit Apify
           </a>
-          <Button>I am shadcn button</Button>
+          <Button variant="emergency">I am shadcn button</Button>
           <Link to="/map">Map</Link>
           <Link to="/detail">Detail</Link>
         </div>
