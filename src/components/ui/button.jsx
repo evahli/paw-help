@@ -21,7 +21,7 @@ const buttonVariants = cva(
       },
     },
     defaultVariants: {
-      variant: 'default',
+      variant: 'emergency',
       size: 'default',
     },
   },
