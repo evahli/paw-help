@@ -2,6 +2,7 @@ import {
   Card,
   CardAction,
   CardContent,
+  CardDescription,
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
@@ -9,9 +10,9 @@ import { Button } from '../ui/button';
 
 const clinicName = 'Veterinarni klinika Nusle';
 const rating = 4.7;
-const type = 'veterinarni klinika';
+const clinicType = 'veterinarni klinika';
 const tel = '608493808';
-const position = [50, 1, 14.423];
+const position = [50.1, 14.423];
 const openingHours = [
   {
     day: 'středa',
@@ -42,13 +43,12 @@ const openingHours = [
     hours: '9 to 20',
   },
 ];
-const clinicWebsite = 'czechitas.cz';
+const clinicWebsite = 'https://czechitas-podklady.cz';
 
 const ClinicCardContent = () => {
   return (
     <div className='flex flex-col items-start'>
     <span>{rating}</span>
-    <span>{type}</span>
     <span>{tel}</span>
     <span>Otevreno</span>
     </div>
@@ -57,12 +57,18 @@ const ClinicCardContent = () => {
 
 export const ClinicCard = () => {
   return (
-    <Card className='min-w-full'>
+    <Card className='w-full'>
       <CardHeader>
         <CardTitle>{clinicName}</CardTitle>
+        <CardDescription>{clinicType}</CardDescription>
+
         <CardAction>
-          <Button>Directions</Button>
-        <Button>Website</Button>
+          <Button to={clinicWebsite}>Website</Button>
+        <Button to={{
+          pathname: `https://maps.google.com/maps`,
+          search: `?daddr=${position.join()}`,
+          }} 
+          >Directions</Button>
         </CardAction>
       </CardHeader>
       <CardContent>
