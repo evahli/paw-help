@@ -129,6 +129,13 @@ body {
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+/* Custom theme goes here 👇 */
+@theme {
+  --color-emergency: #F77A4A;
+  --color-vetCare: #FFDF64;
+  --color-homeCare: #6CAE75;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
