@@ -134,6 +134,7 @@ body {
   --color-emergency: #F77A4A;
   --color-vetCare: #FFDF64;
   --color-homeCare: #6CAE75;
+  --color-background: #fffdf9;
 }
 
 @layer base {
