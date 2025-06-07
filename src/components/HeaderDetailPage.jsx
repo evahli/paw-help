@@ -11,17 +11,21 @@ const categoriesNames = {
 const categoryNameToButtonVariant = {};
 */
 
-export const HeaderDetailPage = ({ categoryName }) => {
+const variantNames = {
+  emergency: 'Veterinární pohotovost',
+  vetCare: 'Veterinární péče',
+  homeCare: 'Veterinář domů',
+};
+
+export const HeaderDetailPage = ({ variant }) => {
   return (
-    <div className="border-b-4 border-indigo-500 mb-8">
-      <div className="flex justify-start">
-        {/* To do: back to proper path */}
-        <BackButton path="/map" />
-      </div>
-      <div className="mb-4">
+    <div className="relative">
+      {/* To do: back to proper path */}
+      <BackButton className="absolute top-0" path="/map" />
+      <div className="flex flex-col text-center gap-4 p-4">
         <h1>PawHelp</h1>
         {/* To do: show proper varian based on categoryName */}
-        <Button variant="emergency">{categoryName}</Button>
+        <Button variant={variant}>{variantNames[variant]}</Button>
       </div>
     </div>
   );

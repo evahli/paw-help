@@ -8,6 +8,7 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
+        transparent: 'bg-transparent',
         emergency: 'bg-emergency',
         vetCare: 'bg-vetCare',
         homeCare: 'bg-homeCare',
