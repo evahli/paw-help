@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { Slot } from '@radix-ui/react-slot';
 import { cva } from 'class-variance-authority';
 import { Link } from 'react-router';
 import { cn } from '@/lib/utils';
@@ -28,8 +27,8 @@ const buttonVariants = cva(
   },
 );
 
-function Button({ className, variant, size, asChild = false, to, ...props }) {
-  const Comp = asChild ? Slot : to === undefined ? 'button' : Link;
+function Button({ className, variant, size, to, ...props }) {
+  const Comp = to === undefined ? 'button' : Link;
 
   return (
     <Comp
