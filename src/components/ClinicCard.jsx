@@ -18,6 +18,7 @@ import {
   isHomeVetClinic,
 } from '@/lib/categorySorting';
 
+/** generate clinic description based on its category from our helper functions */
 const getClinicDescription = (clinicData) => {
   return [
     isEmergencyClinic(clinicData) && 'Pohotovost',
