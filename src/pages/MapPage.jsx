@@ -3,9 +3,12 @@ import { useEffect, useState } from 'react';
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
 import { Button } from '@/components/ui/button';
 import data from '@/data/kliniky_data_sample.json';
-import { isEmergencyClinic, isHomeVetClinic, isVetCareClinic } from '@/lib/categorySorting';
-
-console.log(data);
+import {
+  isEmergencyClinic,
+  isHomeVetClinic,
+  isVetCareClinic,
+} from '@/lib/categorySorting';
+import { getClinicIcon } from '@/lib/categoryIcons';
 
 const getLocation = async (setLocation) => {
   if (navigator.geolocation) {
@@ -50,12 +53,13 @@ export const MapPage = () => {
             {data.map((item) => {
               console.log(item.location);
 
-
-
               return (
-                <Marker position={[item.location.lat, item.location.lng]}>
+                <Marker
+                  position={[item.location.lat, item.location.lng]}
+                  icon={getClinicIcon(item)}
+                >
                   <Popup>
-                    {item.title} <br /> 
+                    {item.title} <br />
                     {isEmergencyClinic(item) && 'Emergency'}
                     {isHomeVetClinic(item) && 'Vyjezd'}
                     {isVetCareClinic(item) && 'Klinika'}
