@@ -1,79 +1,72 @@
-import { Button } from '../components/ui/button';
-import car from '../assets/car.svg';
-import carbon_time from '../assets/carbon_time.svg';
-import famicons_earth from '../assets/famicons_earth.svg';
-import ic_round_phone from '../assets/ic_round_phone.svg';
-import arrow_left from '../assets/arrow_left.svg';
-import pin from '../assets/pin.svg';
+import { HeaderDetailPage } from '../components/HeaderDetailPage';
+import { DetailPageBody } from '../components/DetailPageBody';
 
 export const DetailPage = () => {
+  const mockData = {
+    title: 'Veterinární Výjezdy - MVDr. Evžen Šonský',
+    categoryName: 'Veterinář',
+    address: 'Králodvorská 1084, 110 00 Staré Město, Česko',
+    website: 'http://www.veterinarni-vyjezdy.eu/',
+    phone: '+420 723 285 820',
+    totalScore: 4.7,
+    reviewsCount: 13,
+    openingHours: [
+      {
+        day: 'středa',
+        hours: '9 to 20',
+      },
+      {
+        day: 'čtvrtek',
+        hours: '9 to 20',
+      },
+      {
+        day: 'pátek',
+        hours: '9 to 20',
+      },
+      {
+        day: 'sobota',
+        hours: '9 to 17',
+      },
+      {
+        day: 'neděle',
+        hours: 'Zavřeno',
+      },
+      {
+        day: 'pondělí',
+        hours: '9 to 20',
+      },
+      {
+        day: 'úterý',
+        hours: '9 to 20',
+      },
+    ],
+    imageUrl:
+      'https://lh3.googleusercontent.com/gps-cs-s/AC9h4nof2WeJWcCsHWQ9jJSct6Nsfut1rAyBKVu6N4IXiw_ncqCV7QTYUs5aV9Fn3c7fu6ImVI7wuMFC-bricnKj50LmjLAEtmvSq4kUamhF7OaWn5m9C2idp8-3Yfbo31QEPRMmSOYC=w408-h725-k-no',
+  };
+
   return (
     <div>
-      <div className="border-b-4 border-indigo-500 mb-8">
-        {/* To do: Icon button */}
-        <div className="flex justify-start">
-          <Button variant="secondary" size="icon" className="size-8">
-            <img src={arrow_left} alt="arrow left" />
-          </Button>
-        </div>
-        {/* To do: nahradit za komponentu DetailHeader */}
-        <div className="mb-4">
-          <h1>PawHelp</h1>
-          <Button>Veterinarni pece</Button>
-        </div>
-      </div>
+      <HeaderDetailPage categoryName={mockData.categoryName}/>
       <div>
-        {/* To do: Styled image komponenta */}
         <img
-          src="/images/elementor-placeholder-image.png"
+          src={mockData.imageUrl}
           alt="placeholder"
           width="385px"
           className="rounded-md"
         />
-        <div className="flex flex-col gap-2 mb-8 mt-8">
-          <h2 className="text-left">Nazev kliniky</h2>
-          <div className="flex flex-row justify-between">
-            <div className="flex flex-col gap-2">
-              <h3>Recenze</h3>
-              <h3>Type pece</h3>
-            </div>
-            <div>
-              <Button
-                variant="secondary"
-                size="icon"
-                className="size-8 border-2 border-indigo-500 rounded-full"
-              >
-                <img src={car} alt="car" className="p-1" />
-              </Button>
-            </div>
-          </div>
-        </div>
-        <div className="flex flex-col gap-4">
-          <div className="flex flex-row gap-4">
-            <div className="w-6">
-              <img src={pin} alt="pin" />
-            </div>
-            <p>Adresa</p>
-          </div>
-          <div className="flex flex-row gap-4">
-            <div className="w-6">
-              <img src={carbon_time} alt="carbon_time" />
-            </div>
-            <p>Oteviraci doba</p>
-          </div>
-          <div className="flex flex-row gap-4">
-            <div className='w-6'>
-              <img src={famicons_earth} alt="famicons_earth" />
-            </div>
-            <p>Adresa</p>
-          </div>
-          <div className="flex flex-row gap-4 items-center">
-            <div className='w-6'>
-              <img src={ic_round_phone} alt="ic_round_phone" />
-            </div>
-            <a href="tel:+420777123456">+420777123456</a>
-          </div>
-        </div>
+        <DetailPageBody
+          title={mockData.title}
+          // To do: Reviews component
+          totalScore={mockData.totalScore}
+          categoryName={mockData.categoryName}
+          address={mockData.address}
+          // To do: openingHours component
+          openingHours="Otevreno"
+          website={mockData.website}
+          phone={mockData.phone}
+          // To do: Show based on variant
+          showCarIcon
+        />
       </div>
     </div>
   );
