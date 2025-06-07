@@ -1,5 +1,5 @@
 [
-    {
+  {
     "title": "Veterinární Výjezdy - MVDr. Evžen Šonský",
     "price": null,
     "categoryName": "Veterinář",
@@ -22,9 +22,7 @@
     "permanentlyClosed": false,
     "temporarilyClosed": false,
     "placeId": "ChIJCZiV-OqUC0cR-19pArCw05U",
-    "categories": [
-      "Veterinář"
-    ],
+    "categories": ["Veterinář"],
     "fid": "0x470b94eaf8959809:0x95d3b0b002695ffb",
     "cid": "10796167001738403835",
     "reviewsCount": 13,
@@ -98,10 +96,7 @@
     "permanentlyClosed": false,
     "temporarilyClosed": false,
     "placeId": "ChIJr12enZfsC0cRjTu-Yyc_Yvg",
-    "categories": [
-      "Veterinář",
-      "vyjezdy"
-    ],
+    "categories": ["Veterinář", "vyjezdy"],
     "fid": "0x470bec979d9e5daf:0xf8623f2763be3b8d",
     "cid": "17897937307533458317",
     "reviewsCount": 2,
@@ -122,7 +117,8 @@
     "rank": 17,
     "imageUrl": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=ulDVtPkaylCPdAr2Ptof9g&cb_client=search.gws-prod.gps&w=408&h=240&yaw=124.252655&pitch=0&thumbfov=100",
     "kgmid": "/g/1v3klspv"
-  },{
+  },
+  {
     "title": "Veterinární ordinace U stříbrné kočičky",
     "price": null,
     "categoryName": "Veterinární péče",
@@ -145,10 +141,7 @@
     "permanentlyClosed": false,
     "temporarilyClosed": false,
     "placeId": "ChIJk3lnqPmMC0cRWSeM9KBpKs4",
-    "categories": [
-      "Veterinární péče",
-      "vyjezdy"
-    ],
+    "categories": ["Veterinární péče", "vyjezdy"],
     "fid": "0x470b8cf9a8677993:0xce2a69a0f48c2759",
     "cid": "14855802460853512025",
     "reviewsCount": 1,
@@ -193,9 +186,7 @@
     "permanentlyClosed": false,
     "temporarilyClosed": false,
     "placeId": "ChIJoc1KVESTC0cR8DAd5t3fujk",
-    "categories": [
-      "Veterinář"
-    ],
+    "categories": ["Veterinář"],
     "fid": "0x470b9344544acda1:0x39badfdde61d30f0",
     "cid": "4159883349971513584",
     "reviewsCount": 183,
@@ -376,9 +367,7 @@
     "permanentlyClosed": false,
     "temporarilyClosed": false,
     "placeId": "ChIJ5U6noQXtC0cRx9wvA4Cj1NU",
-    "categories": [
-      "Veterinář"
-    ],
+    "categories": ["Veterinář"],
     "fid": "0x470bed05a1a74ee5:0xd5d4a380032fdcc7",
     "cid": "15408119995345919175",
     "reviewsCount": 4,
@@ -537,10 +526,7 @@
     "permanentlyClosed": false,
     "temporarilyClosed": false,
     "placeId": "ChIJRaN3IY9HYaoRPeEhfKXfCnc",
-    "categories": [
-      "Veterinář",
-      "vyjezdy"
-    ],
+    "categories": ["Veterinář", "vyjezdy"],
     "fid": "0xaa61478f2177a345:0x770adfa57c21e13d",
     "cid": "8577914342125723965",
     "reviewsCount": 12,
@@ -627,9 +613,7 @@
     "permanentlyClosed": false,
     "temporarilyClosed": false,
     "placeId": "ChIJ_TWTvb7yC0cRe_YYhSNLXNo",
-    "categories": [
-      "Veterinář"
-    ],
+    "categories": ["Veterinář"],
     "fid": "0x470bf2bebd9335fd:0xda5c4b238518f67b",
     "cid": "15734533814054614651",
     "reviewsCount": 146,
@@ -710,9 +694,7 @@
     "permanentlyClosed": false,
     "temporarilyClosed": false,
     "placeId": "ChIJRWdh2zuSC0cRCbatHjZaw5Y",
-    "categories": [
-      "Veterinář"
-    ],
+    "categories": ["Veterinář"],
     "fid": "0x470b923bdb616745:0x96c35a361eadb609",
     "cid": "10863625914637202953",
     "reviewsCount": 239,
@@ -1000,10 +982,7 @@
     "permanentlyClosed": false,
     "temporarilyClosed": false,
     "placeId": "ChIJB5UYjrCTC0cR-CbGwintCo8",
-    "categories": [
-      "Veterinář",
-      "Veterinární pohotovost"
-    ],
+    "categories": ["Veterinář", "Veterinární pohotovost"],
     "fid": "0x470b93b08e189507:0x8f0aed29c2c626f8",
     "cid": "10307311460808009464",
     "reviewsCount": 132,
@@ -1092,9 +1071,7 @@
     "permanentlyClosed": false,
     "temporarilyClosed": false,
     "placeId": "ChIJ_RV0ajmVC0cRWT1i4a-AoPU",
-    "categories": [
-      "Veterinární klinika"
-    ],
+    "categories": ["Veterinární klinika"],
     "fid": "0x470b95396a7415fd:0xf5a080afe1623d59",
     "cid": "17699288028454993241",
     "reviewsCount": 152,
