@@ -2,6 +2,10 @@ import dayjs from 'dayjs';
 import { useEffect, useState } from 'react';
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
 import { Button } from '@/components/ui/button';
+import data from '@/data/kliniky_data_sample.json';
+import { isEmergencyClinic, isHomeVetClinic, isVetCareClinic } from '@/lib/categorySorting';
+
+console.log(data);
 
 const getLocation = async (setLocation) => {
   if (navigator.geolocation) {
@@ -27,7 +31,7 @@ export const MapPage = () => {
 
   return (
     <>
-    <h1>PawHelp</h1>
+      <h1>PawHelp</h1>
       {location ? ( // wait for location before rendering map
         <div
           style={{
@@ -43,11 +47,22 @@ export const MapPage = () => {
             zoom={13}
           >
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-            <Marker position={location}>
-              <Popup>
-                A pretty CSS3 popup. <br /> Easily customizable.
-              </Popup>
-            </Marker>
+            {data.map((item) => {
+              console.log(item.location);
+
+
+
+              return (
+                <Marker position={[item.location.lat, item.location.lng]}>
+                  <Popup>
+                    {item.title} <br /> 
+                    {isEmergencyClinic(item) && 'Emergency'}
+                    {isHomeVetClinic(item) && 'Vyjezd'}
+                    {isVetCareClinic(item) && 'Klinika'}
+                  </Popup>
+                </Marker>
+              );
+            })}
           </MapContainer>
         </div>
       ) : (
