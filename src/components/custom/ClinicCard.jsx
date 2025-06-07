@@ -9,6 +9,7 @@ import {
 import { Button } from '../ui/button';
 import starImg from '@/assets/star.svg';
 import phoneImg from '@/assets/ic_round_phone.svg';
+import { cva } from 'class-variance-authority';
 
 const clinicName = 'Veterinarni klinika Nusle';
 const rating = 4.7;
@@ -47,22 +48,35 @@ const openingHours = [
 ];
 const clinicWebsite = 'https://czechitas-podklady.cz';
 
+const clinicCardVariants = cva('w-full border-2 bg-background', {
+  variants: {
+    variant: {
+      emergency: 'border-emergency',
+      vetCare: 'border-vetCare',
+      homeCare: 'border-homeCare',
+    },
+  },
+  defaultVariants: {
+    variant: 'emergency',
+  },
+});
+
 const ClinicCardContent = ({ variant }) => {
   return (
     <div className="flex flex-col items-start">
       <div className="flex items-center gap-2">
         <span>{rating}</span>
-        <img className='w-4 h-4' src={starImg}></img>
+        <img className="w-4 h-4" src={starImg}></img>
       </div>
       <a href={`tel:${phoneNumber}`} className="flex items-center gap-2">
-        <img className='w-6 h-6' src={phoneImg}></img>
+        <img className="w-6 h-6" src={phoneImg}></img>
         <span>{phoneNumber}</span>
       </a>
       {variant === 'homeCare' ? (
         ''
       ) : (
         <div className="flex gap-2">
-          <span className='text-green-600 font-semibold'>Otevřeno</span>
+          <span className="text-green-600 font-semibold">Otevřeno</span>
           {variant === 'emergency' ? <span>300m od vas</span> : ''}
           {variant === 'vetCare' ? <span>Zavira v 19:00</span> : ''}
         </div>
@@ -71,15 +85,15 @@ const ClinicCardContent = ({ variant }) => {
   );
 };
 
-const clinicCardVariants = ['emergency', 'vetCare', 'homeCare'];
+const allowedClinicCardVariants = ['emergency', 'vetCare', 'homeCare'];
 
 export const ClinicCard = ({ variant }) => {
-  if (!clinicCardVariants.includes(variant)) {
+  if (!allowedClinicCardVariants.includes(variant)) {
     throw new Error(`Invalid ClinicCard variant - ${variant}!`);
   }
 
   return (
-    <Card className="w-full">
+    <Card className={clinicCardVariants({variant})}>
       <CardHeader>
         <CardTitle>{clinicName}</CardTitle>
         <CardDescription>{clinicType}</CardDescription>

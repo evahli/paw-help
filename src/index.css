@@ -2,8 +2,6 @@
 
 @custom-variant dark (&:is(.dark *));
 
-
-
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -136,6 +134,7 @@ body {
   --color-emergency: #F77A4A;
   --color-vetCare: #FFDF64;
   --color-homeCare: #6CAE75;
+  --color-background: #fffdf9;
 }
 
 @layer base {
