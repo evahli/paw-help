@@ -1,5 +1,9 @@
+import { ClinicCard } from "@/components/custom/ClinicCard";
+
 export const DetailPage = () => {
-  return(
-    <div>Ola</div>
-  )
-}
+  return (
+    <div>
+      <ClinicCard />
+    </div>
+  );
+};
