@@ -12,43 +12,21 @@ import phoneImg from '@/assets/ic_round_phone.svg';
 import { cva } from 'class-variance-authority';
 import carImg from '@/assets/car.svg';
 import earthImg from '@/assets/famicons_earth.svg';
+import {
+  isEmergencyClinic,
+  isVetCareClinic,
+  isHomeVetClinic,
+} from '@/lib/categorySorting';
 
-const clinicName = 'Veterinarni klinika Nusle';
-const rating = 4.7;
-const clinicType = 'veterinarni klinika';
-const phoneNumber = '608493808';
-const position = [50.1, 14.423];
-const openingHours = [
-  {
-    day: 'středa',
-    hours: '9 to 20',
-  },
-  {
-    day: 'čtvrtek',
-    hours: '9 to 20',
-  },
-  {
-    day: 'pátek',
-    hours: '9 to 20',
-  },
-  {
-    day: 'sobota',
-    hours: '9 to 17',
-  },
-  {
-    day: 'neděle',
-    hours: 'Zavřeno',
-  },
-  {
-    day: 'pondělí',
-    hours: '9 to 20',
-  },
-  {
-    day: 'úterý',
-    hours: '9 to 20',
-  },
-];
-const clinicWebsite = 'https://czechitas-podklady.cz';
+const getClinicDescription = (clinicData) => {
+  return [
+    isEmergencyClinic(clinicData) && 'Pohotovost',
+    isVetCareClinic(clinicData) && 'Veterinární péče',
+    isHomeVetClinic(clinicData) && 'Veterinář domů',
+  ]
+    .filter(Boolean)
+    .join(', ');
+};
 
 const clinicCardVariants = cva('w-full border-2 bg-background', {
   variants: {
@@ -63,17 +41,24 @@ const clinicCardVariants = cva('w-full border-2 bg-background', {
   },
 });
 
-const ClinicCardContent = ({ variant }) => {
+const ClinicCardContent = ({ variant, clinicData }) => {
   return (
     <div className="flex flex-col items-start">
-      <div className="flex items-center gap-2">
-        <span>{rating}</span>
-        <img className="w-4 h-4" src={starImg}></img>
-      </div>
-      <a href={`tel:${phoneNumber}`} className="flex items-center gap-2 font-semibold">
-        <img className="w-6 h-6 " src={phoneImg}></img>
-        <span>{phoneNumber}</span>
-      </a>
+      {clinicData.totalScore && (
+        <div className="flex items-center gap-2">
+          <span>{clinicData.totalScore}</span>
+          <img className="w-4 h-4" src={starImg} />
+        </div>
+      )}
+      {clinicData.phone && (
+        <a
+          href={`tel:${clinicData.phoneUnformatted}`}
+          className="flex items-center gap-2 font-semibold"
+        >
+          <img className="w-6 h-6 " src={phoneImg}></img>
+          <span>{clinicData.phone}</span>
+        </a>
+      )}
       {variant === 'homeCare' ? (
         ''
       ) : (
@@ -89,7 +74,7 @@ const ClinicCardContent = ({ variant }) => {
 
 const allowedClinicCardVariants = ['emergency', 'vetCare', 'homeCare'];
 
-export const ClinicCard = ({ variant }) => {
+export const ClinicCard = ({ variant, clinicData }) => {
   if (!allowedClinicCardVariants.includes(variant)) {
     throw new Error(`Invalid ClinicCard variant - ${variant}!`);
   }
@@ -97,24 +82,26 @@ export const ClinicCard = ({ variant }) => {
   return (
     <Card className={clinicCardVariants({ variant })}>
       <CardHeader>
-        <CardTitle>{clinicName}</CardTitle>
-        <CardDescription>{clinicType}</CardDescription>
+        <CardTitle>{clinicData.title}</CardTitle>
+        <CardDescription>{getClinicDescription(clinicData)}</CardDescription>
 
-        <CardAction className='flex gap-2'>
-          <Button icon={earthImg} variant={variant} to={clinicWebsite} />
+        <CardAction className="flex gap-2">
+          {clinicData.website && (
+            <Button icon={earthImg} variant={variant} to={clinicData.website} />
+          )}
           {variant === 'homeCare' ? (
             ''
           ) : (
             <Button
               icon={carImg}
               variant={variant}
-              to={`https://maps.google.com/maps?daddr=${position.join()}`}
+              to={`https://maps.google.com/maps?daddr=${clinicData.location.lat},${clinicData.location.lng}`}
             />
           )}
         </CardAction>
       </CardHeader>
       <CardContent>
-        <ClinicCardContent variant={variant} />
+        <ClinicCardContent variant={variant} clinicData={clinicData} />
       </CardContent>
     </Card>
   );
