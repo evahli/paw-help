@@ -1,4 +1,4 @@
-import { ClinicCard } from '@/components/custom/ClinicCard';
+import { ClinicCard } from '@/components/ClinicCard';
 
 export const TestPage = () => {
   return (

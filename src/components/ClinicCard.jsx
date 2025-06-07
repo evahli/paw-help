@@ -6,10 +6,12 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { Button } from '../ui/button';
+import { Button } from './ui/button';
 import starImg from '@/assets/star.svg';
 import phoneImg from '@/assets/ic_round_phone.svg';
 import { cva } from 'class-variance-authority';
+import carImg from '@/assets/car.svg';
+import earthImg from '@/assets/famicons_earth.svg';
 
 const clinicName = 'Veterinarni klinika Nusle';
 const rating = 4.7;
@@ -68,8 +70,8 @@ const ClinicCardContent = ({ variant }) => {
         <span>{rating}</span>
         <img className="w-4 h-4" src={starImg}></img>
       </div>
-      <a href={`tel:${phoneNumber}`} className="flex items-center gap-2">
-        <img className="w-6 h-6" src={phoneImg}></img>
+      <a href={`tel:${phoneNumber}`} className="flex items-center gap-2 font-semibold">
+        <img className="w-6 h-6 " src={phoneImg}></img>
         <span>{phoneNumber}</span>
       </a>
       {variant === 'homeCare' ? (
@@ -93,24 +95,21 @@ export const ClinicCard = ({ variant }) => {
   }
 
   return (
-    <Card className={clinicCardVariants({variant})}>
+    <Card className={clinicCardVariants({ variant })}>
       <CardHeader>
         <CardTitle>{clinicName}</CardTitle>
         <CardDescription>{clinicType}</CardDescription>
 
-        <CardAction>
-          <Button variant={variant} to={clinicWebsite}>
-            Website
-          </Button>
+        <CardAction className='flex gap-2'>
+          <Button icon={earthImg} variant={variant} to={clinicWebsite} />
           {variant === 'homeCare' ? (
             ''
           ) : (
             <Button
+              icon={carImg}
               variant={variant}
               to={`https://maps.google.com/maps?daddr=${position.join()}`}
-            >
-              Directions
-            </Button>
+            />
           )}
         </CardAction>
       </CardHeader>
