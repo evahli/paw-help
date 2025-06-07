@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import "leaflet/dist/leaflet.css";
-import "./App.css";
-import dayjs from "dayjs";
-import { Button } from "@/components/ui/button";
+import { useEffect, useState } from 'react';
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import 'leaflet/dist/leaflet.css';
+import './HomePage.css';
+import dayjs from 'dayjs';
+import { Button } from '@/components/ui/button';
+import { Link } from 'react-router';
 
 const getLocation = async (setLocation) => {
   if (navigator.geolocation) {
@@ -16,11 +17,11 @@ const getLocation = async (setLocation) => {
       },
     );
   } else {
-    console.log("Geolocation not supported");
+    console.log('Geolocation not supported');
   }
 };
 
-export const App = () => {
+export const HomePage = () => {
   const [location, setLocation] = useState(null);
 
   useEffect(() => {
@@ -32,14 +33,14 @@ export const App = () => {
       {location ? ( // wait for location before rendering map
         <div
           style={{
-            width: "400px",
-            height: "400px",
-            margin: "0",
-            border: "1px solid #000",
+            width: '400px',
+            height: '400px',
+            margin: '0',
+            border: '1px solid #000',
           }}
         >
           <MapContainer
-            style={{ width: "100%", height: "100%" }}
+            style={{ width: '100%', height: '100%' }}
             center={location}
             zoom={13}
           >
@@ -56,7 +57,7 @@ export const App = () => {
       )}
       <div className="flex flex-col items-center justify-center gap-1">
         <span className="text-sm text-gray-500">
-          It is {dayjs().format("YYYY-MM-DD HH:mm:ss")}
+          It is {dayjs().format('YYYY-MM-DD HH:mm:ss')}
         </span>
         <span className="text-sm text-gray-500">
           Location: {location?.[0]}, {location?.[1]}
@@ -75,6 +76,8 @@ export const App = () => {
             Visit Apify
           </a>
           <Button>I am shadcn button</Button>
+          <Link to="/map">Map</Link>
+          <Link to="/detail">Detail</Link>
         </div>
       </div>
     </>
