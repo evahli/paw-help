@@ -66,7 +66,7 @@ export const App = () => {
             href="tel:123456789"
             className="bg-blue-600 text-white hover:bg-blue-500 rounded-md p-2"
           >
-            Test Call
+            Test Call : lalala
           </a>
           <a
             href="https://maps.google.com/maps?daddr=50.081343,14.4253195"
