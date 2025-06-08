@@ -4,6 +4,8 @@ import { getClinicIcon } from '@/lib/categoryIcons'
 import { isEmergencyClinic, isHomeVetClinic, isVetCareClinic } from '@/lib/categorySorting'
 import { useEffect, useState } from 'react'
 import { useQuery } from '@tanstack/react-query'
+import { useMapVariantData } from '@/lib/useMapVariantData'
+
 
 const getLocation = async (setLocation) => {
     if (navigator.geolocation) {
@@ -19,15 +21,10 @@ const getLocation = async (setLocation) => {
         console.log('Geolocation not supported')
     }
 }
-<<<<<<< HEAD
 
 
 
-const testClinic = data[0]
-=======
-import { useQuery } from '@tanstack/react-query'
-import { useMapVariantData } from '@/lib/useMapVariantData'
->>>>>>> main
+
 
 export const TestPage = () => {
     const [location, setLocation] = useState(null)

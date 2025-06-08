@@ -13,7 +13,7 @@ export const getLocation = async (setLocation) => {
   } else {
     console.log('Geolocation not supported');
   }
-};
+}
 
 export const useGeolocation = () => {
   return
