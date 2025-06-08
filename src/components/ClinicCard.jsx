@@ -18,7 +18,7 @@ import {
   isHomeVetClinic,
 } from '@/lib/categorySorting';
 import { getDistance } from 'geolib';
-
+import { isClinicOpen, getTodaysOpeningHours } from '@/lib/openingHours';
 
 /** generate clinic description based on its category from our helper functions */
 const getClinicDescription = (clinicData) => {
@@ -45,6 +45,7 @@ const clinicCardVariants = cva('w-full border-2 bg-background', {
 });
 
 const ClinicCardContent = ({ variant, clinicData }) => {
+  const isOpen = isClinicOpen(clinicData.openingHours)
   return (
     <div className="flex flex-col items-start">
       {clinicData.totalScore && (
@@ -66,9 +67,14 @@ const ClinicCardContent = ({ variant, clinicData }) => {
         ''
       ) : (
         <div className="flex gap-2">
-          <span className="text-green-600 font-semibold">Otevřeno</span>
+          {isOpen ? (
+            <span className="text-green-600 font-semibold">Otevřeno</span>
+          ) : (
+            <span className="text-red-600 font-semibold">Zavřeno</span>
+          )}
+
           {variant === 'emergency' ? <span>300m od vas</span> : ''}
-          {variant === 'vetCare' ? <span>Zavira v 19:00</span> : ''}
+          {isOpen && variant === 'vetCare' ? <span>{getTodaysOpeningHours(clinicData.openingHours)?.hours.replace('to', '-')}</span> : ''}
         </div>
       )}
     </div>

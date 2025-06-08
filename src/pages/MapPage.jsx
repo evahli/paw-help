@@ -1,14 +1,11 @@
 import { useEffect, useState } from 'react';
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
-import data from '@/data/kliniky_data_sample.json';
-import {
-  isEmergencyClinic,
-  isHomeVetClinic,
-  isVetCareClinic,
-} from '@/lib/categorySorting';
 import { getClinicIcon } from '@/lib/categoryIcons';
 import { PageHeader } from '@/components/PageHeader';
 import { useSearchParams } from 'react-router';
+import { ClinicCard } from '@/components/ClinicCard';
+import { getClinicTypes } from '@/lib/utils';
+import { useMapVariantData } from '@/lib/useMapVariantData';
 
 const getLocation = async (setLocation) => {
   if (navigator.geolocation) {
@@ -28,40 +25,52 @@ const getLocation = async (setLocation) => {
 export const MapPage = () => {
   const [location, setLocation] = useState(null);
   const [searchParams] = useSearchParams();
-  searchParams.get('variant');
+  const pageVariant = searchParams.get('variant');
+  const {mapVariantData: data, isLoading, error} = useMapVariantData({variant: pageVariant})
 
   useEffect(() => {
     getLocation(setLocation);
   }, []);
 
+  /** To do: make it nicer */
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error.message}</div>;
+
   return (
-    <>
-      {/* to do: get categoryName from URL query */}
-      <PageHeader variant={searchParams.get('variant')} />
-      {location ? ( // wait for location before rendering map
-        <div className="h-[75svh]">
-          <MapContainer className="w-full h-full" center={location} zoom={13}>
-            <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-            {data.map((item) => {
-              return (
-                <Marker
-                  position={[item.location.lat, item.location.lng]}
-                  icon={getClinicIcon(item)}
-                >
-                  <Popup>
-                    {item.title} <br />
-                    {isEmergencyClinic(item) && 'Emergency'}
-                    {isHomeVetClinic(item) && 'Vyjezd'}
-                    {isVetCareClinic(item) && 'Klinika'}
-                  </Popup>
-                </Marker>
-              );
-            })}
-          </MapContainer>
-        </div>
-      ) : (
-        <p> No location provided, map cannot be rendered</p>
+    <div className="w-screen h-screen relative">
+      <PageHeader variant={pageVariant} />
+      {location && (
+        <MapContainer
+          className="w-screen h-[80vh] fixed top-[20vh] z-0"
+          center={location}
+          zoom={13}
+        >
+          <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+          {data.map((item) => (
+            <Marker
+              key={item.placeId}
+              position={[item.location.lat, item.location.lng]}
+              icon={getClinicIcon(item)}
+            >
+              <Popup>
+                <strong>{item.title}</strong> <br />
+                {getClinicTypes(item)}
+              </Popup>
+            </Marker>
+          ))}
+        </MapContainer>
       )}
-    </>
+      <div className="absolute top-[80vh] w-full p-4">
+        <div className="flex flex-col gap-2">
+          {data.map((item) => (
+            <ClinicCard
+              clinicData={item}
+              variant={pageVariant}
+              key={item.placeId}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
   );
 };

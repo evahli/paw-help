@@ -1,5 +1,4 @@
 import { ClinicCard } from '@/components/ClinicCard'
-import data from '@/data/kliniky_data_sample.json'
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
 import { getClinicIcon } from '@/lib/categoryIcons'
 import { isEmergencyClinic, isHomeVetClinic, isVetCareClinic } from '@/lib/categorySorting'
@@ -20,13 +19,21 @@ const getLocation = async (setLocation) => {
         console.log('Geolocation not supported')
     }
 }
+<<<<<<< HEAD
 
 
 
 const testClinic = data[0]
+=======
+import { useQuery } from '@tanstack/react-query'
+import { useMapVariantData } from '@/lib/useMapVariantData'
+>>>>>>> main
 
 export const TestPage = () => {
     const [location, setLocation] = useState(null)
+    const {mapVariantData} = useMapVariantData({variant: "homeCare"})
+
+    console.log(mapVariantData)
 
     useEffect(() => {
         getLocation(setLocation)
@@ -44,7 +51,7 @@ export const TestPage = () => {
     return (
         <div className="w-screen h-screen relative">
             <div className="bg-white h-[10vh] w-full fixed top-0 z-20">Header</div>
-            {location && (
+            {location && data && (
                 <MapContainer
                     className="w-screen h-[90vh] fixed top-[10vh] z-0"
                     center={location}
@@ -68,54 +75,12 @@ export const TestPage = () => {
             )}
             <div className="absolute top-[90vh] w-full p-4">
                 <div className="flex flex-col gap-2">
+                  {data?.map(clinic => (
                     <ClinicCard
-                        clinicData={testClinic}
-                        variant="emergency"
-                    />
-                    <ClinicCard
-                        clinicData={testClinic}
+                        clinicData={clinic}
                         variant="vetCare"
                     />
-                    <ClinicCard
-                        clinicData={testClinic}
-                        variant="homeCare"
-                    />
-                    <ClinicCard
-                        clinicData={testClinic}
-                        variant="vetCare"
-                    />
-                    <ClinicCard
-                        clinicData={testClinic}
-                        variant="homeCare"
-                    />
-                    <ClinicCard
-                        clinicData={testClinic}
-                        variant="emergency"
-                    />
-                    <ClinicCard
-                        clinicData={testClinic}
-                        variant="homeCare"
-                    />
-                    <ClinicCard
-                        clinicData={testClinic}
-                        variant="emergency"
-                    />
-                    <ClinicCard
-                        clinicData={testClinic}
-                        variant="homeCare"
-                    />
-                    <ClinicCard
-                        clinicData={testClinic}
-                        variant="homeCare"
-                    />
-                    <ClinicCard
-                        clinicData={testClinic}
-                        variant="homeCare"
-                    />
-                    <ClinicCard
-                        clinicData={testClinic}
-                        variant="homeCare"
-                    />
+                  ))}
                 </div>
             </div>
         </div>
