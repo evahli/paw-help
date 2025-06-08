@@ -1,0 +1,32 @@
+import { Button } from './ui/button';
+import { BackButton } from './BackButton';
+
+/*
+const categoriesNames = {
+  emergency: 'bg-emergency',
+  vetCare: 'Veterinární péče',
+  homeCare: 'bg-homeCare',
+};
+
+const categoryNameToButtonVariant = {};
+*/
+
+const variantNames = {
+  emergency: 'Veterinární pohotovost',
+  vetCare: 'Veterinární péče',
+  homeCare: 'Veterinář domů',
+};
+
+export const PageHeader = ({ variant }) => {
+  return (
+    <div className="relative">
+      {/* To do: back to proper path */}
+      <BackButton className="absolute top-0" path="/map" />
+      <div className="flex flex-col text-center gap-4 p-4">
+        <h1>PawHelp</h1>
+        {/* To do: show proper varian based on categoryName */}
+        <Button variant={variant}>{variantNames[variant]}</Button>
+      </div>
+    </div>
+  );
+};
