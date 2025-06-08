@@ -5,22 +5,8 @@ import { isEmergencyClinic, isHomeVetClinic, isVetCareClinic } from '@/lib/categ
 import { useEffect, useState } from 'react'
 import { useQuery } from '@tanstack/react-query'
 import { useMapVariantData } from '@/lib/useMapVariantData'
+import { getLocation } from '@/lib/location'
 
-
-const getLocation = async (setLocation) => {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(
-            (position) => {
-                setLocation([position.coords.latitude, position.coords.longitude])
-            },
-            (error) => {
-                console.log(error)
-            }
-        )
-    } else {
-        console.log('Geolocation not supported')
-    }
-}
 
 
 
@@ -29,6 +15,7 @@ const getLocation = async (setLocation) => {
 export const TestPage = () => {
     const [location, setLocation] = useState(null)
     const {mapVariantData} = useMapVariantData({variant: "homeCare"})
+  
 
     console.log(mapVariantData)
 
@@ -51,7 +38,7 @@ export const TestPage = () => {
             {location && data && (
                 <MapContainer
                     className="w-screen h-[90vh] fixed top-[10vh] z-0"
-                    center={location}
+                    center={[location.latitude, location.longitude]}
                     zoom={13}
                 >
                     <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />

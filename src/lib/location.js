@@ -1,10 +1,9 @@
-import { getDistance } from 'geolib';
 
 export const getLocation = async (setLocation) => {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(
       (position) => {
-        setLocation([position.coords.latitude, position.coords.longitude]);
+        setLocation(position.coords);
       },
       (error) => {
         console.log(error);
@@ -13,8 +12,5 @@ export const getLocation = async (setLocation) => {
   } else {
     console.log('Geolocation not supported');
   }
-}
+};
 
-export const useGeolocation = () => {
-  return
-}

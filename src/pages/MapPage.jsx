@@ -6,21 +6,9 @@ import { useSearchParams } from 'react-router';
 import { ClinicCard } from '@/components/ClinicCard';
 import { getClinicTypes } from '@/lib/utils';
 import { useMapVariantData } from '@/lib/useMapVariantData';
+import { getLocation } from '@/lib/location';
 
-const getLocation = async (setLocation) => {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-        setLocation([position.coords.latitude, position.coords.longitude]);
-      },
-      (error) => {
-        console.log(error);
-      },
-    );
-  } else {
-    console.log('Geolocation not supported');
-  }
-};
+
 
 export const MapPage = () => {
   const [location, setLocation] = useState(null);
@@ -42,7 +30,7 @@ export const MapPage = () => {
       {location && (
         <MapContainer
           className="w-screen h-[80vh] fixed top-[20vh] z-0"
-          center={location}
+          center={[location.latitude, location.longitude]}
           zoom={13}
         >
           <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />

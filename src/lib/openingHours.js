@@ -58,7 +58,6 @@ export const getTodaysOpeningHours = (weeklyOpeningHours) => {
   const todaysOpeningHours = weeklyOpeningHours.find(
     (item) => item.day === todayCz,
   );
-  console.log(todaysOpeningHours)
   return todaysOpeningHours;
 };
 
