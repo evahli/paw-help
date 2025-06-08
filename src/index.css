@@ -124,8 +124,11 @@
 /* Custom theme goes here 👇 */
 @theme {
   --color-emergency: #F77A4A;
+  --color-emergency-hover: #FF9B80;
   --color-vetCare: #FFDF64;
+  --color-vetCare-hover: #FFE97F;
   --color-homeCare: #6CAE75;
+  --color-homeCare-hover: #8BC495;
   --color-background: #fffdf9;
 }
 
