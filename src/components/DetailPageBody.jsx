@@ -14,6 +14,7 @@ export const DetailPageBody = ({
   website,
   phone,
   showCarIcon,
+  variant,
 }) => {
   return (
     <div>
@@ -27,11 +28,10 @@ export const DetailPageBody = ({
           {showCarIcon && (
             <div>
               <Button
-                variant="secondary"
+                icon={car}
+                variant={variant}
                 size="icon"
-                className="size-8 border-2 border-indigo-500 rounded-full"
               >
-                <img src={car} alt="car" className="p-1" />
               </Button>
             </div>
           )}

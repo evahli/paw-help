@@ -1,69 +1,38 @@
 import { PageHeader } from '../components/PageHeader';
 import { DetailPageBody } from '../components/DetailPageBody';
+import { useSearchParams } from 'react-router';
+import { useClinicData } from '@/lib/useClinicData';
 
 export const DetailPage = () => {
-  const mockData = {
-    title: 'Veterinární Výjezdy - MVDr. Evžen Šonský',
-    categoryName: 'Veterinář',
-    address: 'Králodvorská 1084, 110 00 Staré Město, Česko',
-    website: 'http://www.veterinarni-vyjezdy.eu/',
-    phone: '+420 723 285 820',
-    totalScore: 4.7,
-    reviewsCount: 13,
-    openingHours: [
-      {
-        day: 'středa',
-        hours: '9 to 20',
-      },
-      {
-        day: 'čtvrtek',
-        hours: '9 to 20',
-      },
-      {
-        day: 'pátek',
-        hours: '9 to 20',
-      },
-      {
-        day: 'sobota',
-        hours: '9 to 17',
-      },
-      {
-        day: 'neděle',
-        hours: 'Zavřeno',
-      },
-      {
-        day: 'pondělí',
-        hours: '9 to 20',
-      },
-      {
-        day: 'úterý',
-        hours: '9 to 20',
-      },
-    ],
-    imageUrl:
-      'https://lh3.googleusercontent.com/gps-cs-s/AC9h4nof2WeJWcCsHWQ9jJSct6Nsfut1rAyBKVu6N4IXiw_ncqCV7QTYUs5aV9Fn3c7fu6ImVI7wuMFC-bricnKj50LmjLAEtmvSq4kUamhF7OaWn5m9C2idp8-3Yfbo31QEPRMmSOYC=w408-h725-k-no',
-  };
+  const [searchParams] = useSearchParams();
+  const placeId = searchParams.get('placeId');
+  const variant = searchParams.get("variant");
+  const { placeData, isLoading, error } = useClinicData(placeId);
+
+  if (isLoading || !placeData) return <div>Loading...</div>;
+  if (error) return <div>Error: {error.message}</div>;
 
   return (
-    <div>
-      <PageHeader categoryName={mockData.categoryName} />
-      <div>
+    <div className='h-screen overflow-auto'>
+      <PageHeader categoryName={placeData.categoryName} variant={variant}/>
+      <div className='pt-[20vh]'>
         <img
-          src={mockData.imageUrl}
+          src={placeData.imageUrl}
           alt="placeholder"
           width="385px"
           className="rounded-md"
         />
         <DetailPageBody
-          title={mockData.title}
+          variant={variant}
+          title={placeData.title}
           // To do: Reviews component
-          totalScore={mockData.totalScore}
-          categoryName={mockData.categoryName}
-          address={mockData.address}
+          totalScore={placeData.totalScore}
+          categoryName={placeData.categoryName}
+          address={placeData.address}
           // To do: openingHours component
           openingHours="Otevreno"
-          website={mockData.website}
-          phone={mockData.phone}
+          website={placeData.website}
+          phone={placeData.phone}
           // To do: Show based on variant
           showCarIcon
         />

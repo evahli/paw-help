@@ -25,7 +25,7 @@ const getLocation = async (setLocation) => {
 export const MapPage = () => {
   const [location, setLocation] = useState(null);
   const [searchParams] = useSearchParams();
-  const pageVariant = searchParams.get('variant');
+  const pageVariant = searchParams.get('variant') || "vetCare";
   const {mapVariantData: data, isLoading, error} = useMapVariantData({variant: pageVariant})
 
   useEffect(() => {
@@ -33,12 +33,12 @@ export const MapPage = () => {
   }, []);
 
   /** To do: make it nicer */
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading || !data) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
 
   return (
     <div className="w-screen h-screen relative">
-      <PageHeader variant={pageVariant} />
+      <PageHeader variant={pageVariant} redirectToHome={true}/>
       {location && (
         <MapContainer
           className="w-screen h-[80vh] fixed top-[20vh] z-0"

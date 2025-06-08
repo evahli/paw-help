@@ -18,6 +18,7 @@ import {
   isHomeVetClinic,
 } from '@/lib/categorySorting';
 import { isClinicOpen, getTodaysOpeningHours } from '@/lib/openingHours';
+import { Link } from 'react-router';
 
 /** generate clinic description based on its category from our helper functions */
 const getClinicDescription = (clinicData) => {
@@ -44,7 +45,7 @@ const clinicCardVariants = cva('w-full border-2 bg-background', {
 });
 
 const ClinicCardContent = ({ variant, clinicData }) => {
-  const isOpen = isClinicOpen(clinicData.openingHours)
+  const isOpen = isClinicOpen(clinicData.openingHours);
   return (
     <div className="flex flex-col items-start">
       {clinicData.totalScore && (
@@ -73,7 +74,16 @@ const ClinicCardContent = ({ variant, clinicData }) => {
           )}
 
           {variant === 'emergency' ? <span>300m od vas</span> : ''}
-          {isOpen && variant === 'vetCare' ? <span>{getTodaysOpeningHours(clinicData.openingHours)?.hours.replace('to', '-')}</span> : ''}
+          {isOpen && variant === 'vetCare' ? (
+            <span>
+              {getTodaysOpeningHours(clinicData.openingHours)?.hours.replace(
+                'to',
+                '-',
+              )}
+            </span>
+          ) : (
+            ''
+          )}
         </div>
       )}
     </div>
@@ -90,7 +100,9 @@ export const ClinicCard = ({ variant, clinicData }) => {
   return (
     <Card className={clinicCardVariants({ variant })}>
       <CardHeader>
-        <CardTitle>{clinicData.title}</CardTitle>
+        <CardTitle>
+          <Link to={`/detail?placeId=${clinicData.placeId}&variant=${variant}`}>{clinicData.title}</Link>
+        </CardTitle>
         <CardDescription>{getClinicDescription(clinicData)}</CardDescription>
 
         <CardAction className="flex gap-2">
