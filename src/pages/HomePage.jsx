@@ -23,12 +23,12 @@ export const HomePage = () => {
   if (error) return <div>Error: {error.message}</div>;
 
   return (
-    <>
-      <div className="flex flex-col text-center gap-2 mb-4">
+    <div className='h-screen overflow-y-auto flex flex-col justify-between'>
+      <div className="flex flex-col text-center gap-2 pt-4">
         <h1>PawHelp</h1>
         <h2>Hledám</h2>
       </div>
-      <div className="flex flex-col gap-2 mx-6 mb-6">
+      <div className="flex flex-col gap-2 p-4">
         <Button variant="emergency" to="/map?variant=emergency">
           Veterinární pohotovost
         </Button>
@@ -40,7 +40,7 @@ export const HomePage = () => {
         </Button>
       </div>
       {location ? ( // wait for location before rendering map
-        <div className="h-96">
+        <div className="h-[50vh] w-screen">
           <MapContainer className="w-full h-full" center={[location.latitude, location.longitude]} zoom={11}>
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
             {data.map((item) => {
@@ -51,7 +51,7 @@ export const HomePage = () => {
                   icon={getClinicIcon(item)}
                 >
                   <Popup>
-                   <strong> {item.title}</strong> <br />
+                    <strong> {item.title}</strong> <br />
                     {getClinicTypes(item)}
                   </Popup>
                 </Marker>
@@ -62,13 +62,13 @@ export const HomePage = () => {
       ) : (
         <p> No location provided, map cannot be rendered</p>
       )}
-      <div className="mt-4">
+      <div className="p-2">
         <p className="italic font-medium text-xs">
           Data použitá v této aplikaci pocházejí z Google Maps. Poslední
           aktualizace proběhla dne {lastEditedAt.format('DD.MM.YYYY')}.
           Informace se mohou měnit a nemusejí být vždy zcela aktuální.
         </p>
       </div>
-    </>
+    </div>
   );
 };
