@@ -1,5 +1,6 @@
 import Leaflet from 'leaflet';
 import { isEmergencyClinic, isHomeVetClinic } from './categorySorting';
+import catImg from '@/assets/mdi_emoji-cat.svg'
 
 const greenIcon = new Leaflet.Icon({
   iconUrl:
@@ -14,7 +15,7 @@ const greenIcon = new Leaflet.Icon({
 
 const redIcon = new Leaflet.Icon({
   iconUrl:
-    'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
+    'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-orange.png',
   shadowUrl:
     'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
   iconSize: [25, 41],
@@ -30,6 +31,14 @@ const yellowIcon = new Leaflet.Icon({
     'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
   iconSize: [25, 41],
   iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41],
+});
+
+export const userLocationIcon = new Leaflet.Icon({
+  iconUrl: catImg,
+  iconSize: [60, 60],
+  iconAnchor: [30, 30],
   popupAnchor: [1, -34],
   shadowSize: [41, 41],
 });
