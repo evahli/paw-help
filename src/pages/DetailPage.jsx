@@ -2,6 +2,7 @@ import { PageHeader } from '../components/PageHeader';
 import { DetailPageBody } from '../components/DetailPageBody';
 import { useSearchParams } from 'react-router';
 import { useClinicData } from '@/lib/useClinicData';
+import { getTodaysOpeningHours, isClinicOpen } from '@/lib/openingHours';
 
 export const DetailPage = () => {
   const [searchParams] = useSearchParams();
@@ -11,6 +12,8 @@ export const DetailPage = () => {
 
   if (isLoading || !placeData) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
+
+  const isOpen = isClinicOpen(placeData.openingHours);
 
   return (
     <div className='h-screen overflow-auto'>
@@ -29,8 +32,14 @@ export const DetailPage = () => {
           totalScore={placeData.totalScore}
           categoryName={placeData.categoryName}
           address={placeData.address}
-          // To do: openingHours component
-          openingHours="Otevreno"
+          openingHours={ isOpen ? <span>
+                        {getTodaysOpeningHours(placeData.openingHours)?.hours.replace(
+                          'to',
+                          '-',
+                        )}
+                      </span>
+                      : <span className='text-red-600 font-semibold'>Zavřeno</span>
+                    }
           website={placeData.website}
           phone={placeData.phone}
           // To do: Show based on variant
