@@ -8,9 +8,11 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
+        transparent: 'bg-transparent',
         emergency: 'bg-emergency hover:bg-emergency-hover',
         vetCare: 'bg-vetCare hover:bg-vetCare-hover',
         homeCare: 'bg-homeCare hover:bg-homeCare-hover',
+        icon: 'bg-transparent',
       },
       size: {
         default: 'h-9 px-4 py-2 has-[>svg]:px-3',
