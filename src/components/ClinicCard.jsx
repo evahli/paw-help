@@ -21,6 +21,7 @@ import { getDistance } from 'geolib';
 import { isClinicOpen, getTodaysOpeningHours } from '@/lib/openingHours';
 import { useEffect, useState } from 'react';
 import { getLocation } from '@/lib/location';
+import { Link } from 'react-router';
 
 
 const DisplayDistance = ({distance}) => {
@@ -65,6 +66,7 @@ const ClinicCardContent = ({ variant, clinicData }) => {
       setDistanceFromClinic(getDistance({latitude: location.latitude, longitude:location.longitude}, clinicData.location))
     }
   }, [location, clinicData])
+
   const isOpen = isClinicOpen(clinicData.openingHours);
   return (
     <div className="flex flex-col items-start">
@@ -94,6 +96,7 @@ const ClinicCardContent = ({ variant, clinicData }) => {
           )}
 
           {variant === 'emergency' && distanceFromClinic ? <DisplayDistance distance={distanceFromClinic} /> : ''}
+
           {isOpen && variant === 'vetCare' ? (
             <span>
               {getTodaysOpeningHours(clinicData.openingHours)?.hours.replace(
@@ -120,7 +123,9 @@ export const ClinicCard = ({ variant, clinicData }) => {
   return (
     <Card className={clinicCardVariants({ variant })}>
       <CardHeader>
-        <CardTitle>{clinicData.title}</CardTitle>
+        <CardTitle>
+          <Link to={`/detail?placeId=${clinicData.placeId}&variant=${variant}`}>{clinicData.title}</Link>
+        </CardTitle>
         <CardDescription>{getClinicDescription(clinicData)}</CardDescription>
 
         <CardAction className="flex gap-2">
