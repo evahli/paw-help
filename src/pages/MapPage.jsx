@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
 import { getClinicIcon } from '@/lib/categoryIcons';
 import { PageHeader } from '@/components/PageHeader';
-import { useSearchParams } from 'react-router';
+import { Link, useSearchParams } from 'react-router';
 import { ClinicCard } from '@/components/ClinicCard';
 import { getClinicTypes } from '@/lib/utils';
 import { useMapVariantData } from '@/lib/useMapVariantData';
@@ -41,7 +41,9 @@ export const MapPage = () => {
               icon={getClinicIcon(item)}
             >
               <Popup>
-                <strong>{item.title}</strong> <br />
+                <Link to={`/detail?placeId=${item.placeId}&variant=${pageVariant}`}>
+                  <strong>{item.title}</strong> <br />
+                </Link>
                 {getClinicTypes(item)}
               </Popup>
             </Marker>
