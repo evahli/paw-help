@@ -17,6 +17,8 @@ import {
   isVetCareClinic,
   isHomeVetClinic,
 } from '@/lib/categorySorting';
+import { getDistance } from 'geolib';
+
 
 /** generate clinic description based on its category from our helper functions */
 const getClinicDescription = (clinicData) => {
