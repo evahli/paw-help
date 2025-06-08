@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
-import { getClinicIcon } from '@/lib/categoryIcons';
+import { getClinicIcon, userLocationIcon } from '@/lib/categoryIcons';
 import { PageHeader } from '@/components/PageHeader';
 import { Link, useSearchParams } from 'react-router';
 import { ClinicCard } from '@/components/ClinicCard';
@@ -19,7 +19,7 @@ export const MapPage = () => {
     isLoading,
     error,
   } = useMapVariantData({ variant: pageVariant });
-  
+
   useEffect(() => {
     getLocation(setLocation);
   }, []);
@@ -63,13 +63,19 @@ export const MapPage = () => {
               icon={getClinicIcon(item)}
             >
               <Popup>
-                <Link to={`/detail?placeId=${item.placeId}&variant=${pageVariant}`}>
+                <Link
+                  to={`/detail?placeId=${item.placeId}&variant=${pageVariant}`}
+                >
                   <strong>{item.title}</strong> <br />
                 </Link>
                 {getClinicTypes(item)}
               </Popup>
             </Marker>
           ))}
+          <Marker
+            position={[location.latitude, location.longitude]}
+            icon={userLocationIcon}
+          ></Marker>
         </MapContainer>
       )}
       <div className="absolute top-[80vh] w-full p-4">

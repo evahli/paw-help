@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import { Button } from '@/components/ui/button';
-import { getClinicIcon } from '@/lib/categoryIcons';
+import { getClinicIcon, userLocationIcon } from '@/lib/categoryIcons';
 import dayjs from 'dayjs';
 import { getClinicTypes } from '@/lib/utils';
 import { useMapVariantData } from '@/lib/useMapVariantData';
@@ -10,15 +10,18 @@ import { getLocation } from '@/lib/location';
 
 const lastEditedAt = dayjs('2025-06-07');
 
-
 export const HomePage = () => {
   const [location, setLocation] = useState(null);
-  const {mapVariantData: data, isLoading, error} = useMapVariantData({variant: "all"});
+  const {
+    mapVariantData: data,
+    isLoading,
+    error,
+  } = useMapVariantData({ variant: 'all' });
 
   useEffect(() => {
     getLocation(setLocation);
   }, []);
- 
+
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
 
@@ -41,7 +44,11 @@ export const HomePage = () => {
       </div>
       {location ? ( // wait for location before rendering map
         <div className="h-96">
-          <MapContainer className="w-full h-full" center={[location.latitude, location.longitude]} zoom={11}>
+          <MapContainer
+            className="w-full h-full"
+            center={[location.latitude, location.longitude]}
+            zoom={13}
+          >
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
             {data.map((item) => {
               return (
@@ -51,12 +58,16 @@ export const HomePage = () => {
                   icon={getClinicIcon(item)}
                 >
                   <Popup>
-                   <strong> {item.title}</strong> <br />
+                    <strong> {item.title}</strong> <br />
                     {getClinicTypes(item)}
                   </Popup>
                 </Marker>
               );
             })}
+            <Marker
+              position={[location.latitude, location.longitude]}
+              icon={userLocationIcon}
+            ></Marker>
           </MapContainer>
         </div>
       ) : (
