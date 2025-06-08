@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
-import { getClinicIcon } from '@/lib/categoryIcons';
+import { getClinicIcon, userLocationIcon } from '@/lib/categoryIcons';
 import { PageHeader } from '@/components/PageHeader';
 import { Link, useSearchParams } from 'react-router';
 import { ClinicCard } from '@/components/ClinicCard';
@@ -9,12 +9,15 @@ import { useMapVariantData } from '@/lib/useMapVariantData';
 import { getLocation } from '@/lib/location';
 
 
-
 export const MapPage = () => {
   const [location, setLocation] = useState(null);
   const [searchParams] = useSearchParams();
-  const pageVariant = searchParams.get('variant') || "vetCare";
-  const {mapVariantData: data, isLoading, error} = useMapVariantData({variant: pageVariant})
+  const pageVariant = searchParams.get('variant') || 'vetCare';
+  const {
+    mapVariantData: data,
+    isLoading,
+    error,
+  } = useMapVariantData({ variant: pageVariant });
 
   useEffect(() => {
     getLocation(setLocation);
@@ -26,7 +29,7 @@ export const MapPage = () => {
 
   return (
     <div className="w-screen h-screen relative">
-      <PageHeader variant={pageVariant} redirectToHome={true}/>
+      <PageHeader variant={pageVariant} redirectToHome={true} />
       {location && (
         <MapContainer
           className="w-screen h-[80vh] fixed top-[20vh] z-0"
@@ -41,13 +44,19 @@ export const MapPage = () => {
               icon={getClinicIcon(item)}
             >
               <Popup>
-                <Link to={`/detail?placeId=${item.placeId}&variant=${pageVariant}`}>
+                <Link
+                  to={`/detail?placeId=${item.placeId}&variant=${pageVariant}`}
+                >
                   <strong>{item.title}</strong> <br />
                 </Link>
                 {getClinicTypes(item)}
               </Popup>
             </Marker>
           ))}
+          <Marker
+            position={[location.latitude, location.longitude]}
+            icon={userLocationIcon}
+          ></Marker>
         </MapContainer>
       )}
       <div className="absolute top-[80vh] w-full p-4">
