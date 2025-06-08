@@ -7,7 +7,7 @@ import {
   isVetCareClinic,
 } from '@/lib/categorySorting';
 import { getClinicIcon } from '@/lib/categoryIcons';
-import { HeaderDetailPage } from '@/components/HeaderDetailPage';
+import { PageHeader } from '@/components/PageHeader';
 import { useSearchParams } from 'react-router';
 
 const getLocation = async (setLocation) => {
@@ -37,7 +37,7 @@ export const MapPage = () => {
   return (
     <>
       {/* to do: get categoryName from URL query */}
-      <HeaderDetailPage variant={searchParams.get('variant')} />
+      <PageHeader variant={searchParams.get('variant')} />
       {location ? ( // wait for location before rendering map
         <div className="h-[75svh]">
           <MapContainer className="w-full h-full" center={location} zoom={13}>

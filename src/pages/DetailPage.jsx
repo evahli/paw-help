@@ -1,4 +1,4 @@
-import { HeaderDetailPage } from '../components/HeaderDetailPage';
+import { PageHeader } from '../components/PageHeader';
 import { DetailPageBody } from '../components/DetailPageBody';
 
 export const DetailPage = () => {
@@ -46,7 +46,7 @@ export const DetailPage = () => {
 
   return (
     <div>
-      <HeaderDetailPage categoryName={mockData.categoryName}/>
+      <PageHeader categoryName={mockData.categoryName} />
       <div>
         <img
           src={mockData.imageUrl}

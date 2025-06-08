@@ -1,4 +1,4 @@
-import { Button } from '../components/ui/button';
+import { Button } from './ui/button';
 import { BackButton } from './BackButton';
 
 /*
@@ -17,7 +17,7 @@ const variantNames = {
   homeCare: 'Veterinář domů',
 };
 
-export const HeaderDetailPage = ({ variant }) => {
+export const PageHeader = ({ variant }) => {
   return (
     <div className="relative">
       {/* To do: back to proper path */}
