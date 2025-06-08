@@ -1,9 +1,18 @@
 import { useEffect, useState } from 'react';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
-import dayjs from 'dayjs';
 import { Button } from '@/components/ui/button';
-import { Link } from 'react-router';
+import data from '@/data/kliniky_data_sample.json';
+import {
+  isEmergencyClinic,
+  isHomeVetClinic,
+  isVetCareClinic,
+} from '@/lib/categorySorting';
+import { getClinicIcon } from '@/lib/categoryIcons';
+import dayjs from 'dayjs';
+import { useQuery } from '@tanstack/react-query';
+
+const lastEditedAt = dayjs('2025-06-07');
 
 const getLocation = async (setLocation) => {
   if (navigator.geolocation) {
@@ -27,57 +36,72 @@ export const HomePage = () => {
     getLocation(setLocation);
   }, []);
 
+  const { data, isLoading, error } = useQuery({
+    queryKey: ['clinics'],
+    queryFn: () =>
+      fetch('https://api.apify.com/v2/datasets/A9Iwh31T14DnUBqgY/items').then(
+        (res) => res.json(),
+      ),
+  });
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error.message}</div>;
+  console.log(data);
+
   return (
     <>
+      <div className="flex flex-col text-center gap-2 mb-4">
+        <h1>PawHelp</h1>
+        <h2>Hledám</h2>
+      </div>
+      <div className="flex flex-col gap-2 mx-6 mb-6">
+        <Button variant="emergency" to="/map?variant=emergency">
+          Veterinární pohotovost
+        </Button>
+        <Button variant="vetCare" to="/map?variant=vetCare">
+          Veterinární péče
+        </Button>
+        <Button variant="homeCare" to="/map?variant=homeCare">
+          Veterinář domů
+        </Button>
+      </div>
       {location ? ( // wait for location before rendering map
-        <div
-          style={{
-            width: '400px',
-            height: '400px',
-            margin: '0',
-            border: '1px solid #000',
-          }}
-        >
-          <MapContainer
-            style={{ width: '100%', height: '100%' }}
-            center={location}
-            zoom={13}
-          >
+        <div className="h-96">
+          <MapContainer className="w-full h-full" center={location} zoom={11}>
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-            <Marker position={location}>
-              <Popup>
-                A pretty CSS3 popup. <br /> Easily customizable.
-              </Popup>
-            </Marker>
+            {data.map((item) => {
+              /** Get clinic types, when multiple, separate by a comma */
+              const clinicTypes = [
+                isEmergencyClinic(item) && 'Pohotovost',
+                isVetCareClinic(item) && 'Veterinární péče',
+                isHomeVetClinic(item) && 'Veterinář domů',
+              ]
+                .filter(Boolean)
+                .join(', ');
+
+              return (
+                <Marker
+                  key={item.placeId}
+                  position={[item.location.lat, item.location.lng]}
+                  icon={getClinicIcon(item)}
+                >
+                  <Popup>
+                   <strong> {item.title}</strong> <br />
+                    {clinicTypes}
+                  </Popup>
+                </Marker>
+              );
+            })}
           </MapContainer>
         </div>
       ) : (
         <p> No location provided, map cannot be rendered</p>
       )}
-      <div className="flex flex-col items-center justify-center gap-1">
-        <span className="text-sm text-gray-500">
-          It is {dayjs().format('YYYY-MM-DD HH:mm:ss')}
-        </span>
-        <span className="text-sm text-gray-500">
-          Location: {location?.[0]}, {location?.[1]}
-        </span>
-        <div className="flex flex-row gap-1">
-          <a
-            href="tel:123456789"
-            className="bg-blue-600 text-white hover:bg-blue-500 rounded-md p-2"
-          >
-            Test Call : lalala
-          </a>
-          <a
-            href="https://maps.google.com/maps?daddr=50.081343,14.4253195"
-            className="bg-blue-600 text-white hover:bg-blue-500 rounded-md p-2"
-          >
-            Visit Apify
-          </a>
-          <Button variant="emergency">I am shadcn button</Button>
-          <Link to="/map">Map</Link>
-          <Link to="/detail">Detail</Link>
-        </div>
+      <div className="mt-4">
+        <p className="italic font-medium text-xs">
+          Data použitá v této aplikaci pocházejí z Google Maps. Poslední
+          aktualizace proběhla dne {lastEditedAt.format('DD.MM.YYYY')}.
+          Informace se mohou měnit a nemusejí být vždy zcela aktuální.
+        </p>
       </div>
     </>
   );

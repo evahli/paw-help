@@ -8,16 +8,17 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        emergency: 'bg-emergency',
-        vetCare: 'bg-vetCare',
-        homeCare: 'bg-homeCare',
+        transparent: 'bg-transparent',
+        emergency: 'bg-emergency hover:bg-emergency-hover',
+        vetCare: 'bg-vetCare hover:bg-vetCare-hover',
+        homeCare: 'bg-homeCare hover:bg-homeCare-hover',
         icon: 'bg-transparent',
       },
       size: {
         default: 'h-9 px-4 py-2 has-[>svg]:px-3',
         sm: 'h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5',
         lg: 'h-10 rounded-md px-6 has-[>svg]:px-4',
-        icon: 'size-9',
+        icon: 'size-12 rounded-full',
       },
     },
     defaultVariants: {
@@ -27,16 +28,25 @@ const buttonVariants = cva(
   },
 );
 
-function Button({ className, variant, size, to, ...props }) {
+function Button({ className, variant, size, to, icon, children, ...props }) {
   const Comp = to === undefined ? 'button' : Link;
 
   return (
     <Comp
       data-slot="button"
-      className={cn(buttonVariants({ variant, size, className }))}
+      className={cn(
+        buttonVariants({
+          variant,
+          size: icon === undefined ? size : 'icon',
+          className,
+        }),
+      )}
       to={to}
       {...props}
-    />
+    >
+      {icon && <img className='w-8 h-8' src={icon} alt="icon"/>}
+      {children}
+    </Comp>
   );
 }
 
