@@ -6,23 +6,10 @@ import { getClinicIcon } from '@/lib/categoryIcons';
 import dayjs from 'dayjs';
 import { getClinicTypes } from '@/lib/utils';
 import { useMapVariantData } from '@/lib/useMapVariantData';
+import { getLocation } from '@/lib/location';
 
 const lastEditedAt = dayjs('2025-06-07');
 
-const getLocation = async (setLocation) => {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-        setLocation([position.coords.latitude, position.coords.longitude]);
-      },
-      (error) => {
-        console.log(error);
-      },
-    );
-  } else {
-    console.log('Geolocation not supported');
-  }
-};
 
 export const HomePage = () => {
   const [location, setLocation] = useState(null);
@@ -54,7 +41,7 @@ export const HomePage = () => {
       </div>
       {location ? ( // wait for location before rendering map
         <div className="h-96">
-          <MapContainer className="w-full h-full" center={location} zoom={11}>
+          <MapContainer className="w-full h-full" center={[location.latitude, location.longitude]} zoom={11}>
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
             {data.map((item) => {
               return (

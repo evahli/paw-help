@@ -17,9 +17,21 @@ import {
   isVetCareClinic,
   isHomeVetClinic,
 } from '@/lib/categorySorting';
+import { getDistance } from 'geolib';
 import { isClinicOpen, getTodaysOpeningHours } from '@/lib/openingHours';
+import { useEffect, useState } from 'react';
+import { getLocation } from '@/lib/location';
 import { Link } from 'react-router';
 
+
+const DisplayDistance = ({distance}) => {
+  if (distance <= 500) {
+    return <span>{distance} m od Vás</span>
+  }
+  else {
+    return <span>{(distance / 1000).toFixed(2)} km od Vás</span>
+  }
+}
 /** generate clinic description based on its category from our helper functions */
 const getClinicDescription = (clinicData) => {
   return [
@@ -45,6 +57,16 @@ const clinicCardVariants = cva('w-full border-2 bg-background', {
 });
 
 const ClinicCardContent = ({ variant, clinicData }) => {
+  const [location, setLocation] = useState(null);
+  const [distanceFromClinic, setDistanceFromClinic] = useState(null);
+
+  useEffect(() => {
+    getLocation(setLocation);
+    if (location) {
+      setDistanceFromClinic(getDistance({latitude: location.latitude, longitude:location.longitude}, clinicData.location))
+    }
+  }, [location, clinicData])
+
   const isOpen = isClinicOpen(clinicData.openingHours);
   return (
     <div className="flex flex-col items-start">
@@ -73,7 +95,8 @@ const ClinicCardContent = ({ variant, clinicData }) => {
             <span className="text-red-600 font-semibold">Zavřeno</span>
           )}
 
-          {variant === 'emergency' ? <span>300m od vas</span> : ''}
+          {variant === 'emergency' && distanceFromClinic ? <DisplayDistance distance={distanceFromClinic} /> : ''}
+
           {isOpen && variant === 'vetCare' ? (
             <span>
               {getTodaysOpeningHours(clinicData.openingHours)?.hours.replace(

@@ -3,27 +3,19 @@ import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
 import { getClinicIcon } from '@/lib/categoryIcons'
 import { isEmergencyClinic, isHomeVetClinic, isVetCareClinic } from '@/lib/categorySorting'
 import { useEffect, useState } from 'react'
-
-const getLocation = async (setLocation) => {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(
-            (position) => {
-                setLocation([position.coords.latitude, position.coords.longitude])
-            },
-            (error) => {
-                console.log(error)
-            }
-        )
-    } else {
-        console.log('Geolocation not supported')
-    }
-}
 import { useQuery } from '@tanstack/react-query'
 import { useMapVariantData } from '@/lib/useMapVariantData'
+import { getLocation } from '@/lib/location'
+
+
+
+
+
 
 export const TestPage = () => {
     const [location, setLocation] = useState(null)
     const {mapVariantData} = useMapVariantData({variant: "homeCare"})
+  
 
     console.log(mapVariantData)
 
@@ -46,7 +38,7 @@ export const TestPage = () => {
             {location && data && (
                 <MapContainer
                     className="w-screen h-[90vh] fixed top-[10vh] z-0"
-                    center={location}
+                    center={[location.latitude, location.longitude]}
                     zoom={13}
                 >
                     <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
