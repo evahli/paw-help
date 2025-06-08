@@ -28,7 +28,7 @@ const getLocation = async (setLocation) => {
 export const MapPage = () => {
   const [location, setLocation] = useState(null);
   const [searchParams] = useSearchParams();
-  console.log(searchParams.get('variant'));
+  searchParams.get('variant');
 
   useEffect(() => {
     getLocation(setLocation);
