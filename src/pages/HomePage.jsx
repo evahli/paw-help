@@ -2,15 +2,10 @@ import { useEffect, useState } from 'react';
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import { Button } from '@/components/ui/button';
-import data from '@/data/kliniky_data_sample.json';
-import {
-  isEmergencyClinic,
-  isHomeVetClinic,
-  isVetCareClinic,
-} from '@/lib/categorySorting';
 import { getClinicIcon } from '@/lib/categoryIcons';
 import dayjs from 'dayjs';
-import { useQuery } from '@tanstack/react-query';
+import { getClinicTypes } from '@/lib/utils';
+import { useMapVariantData } from '@/lib/useMapVariantData';
 
 const lastEditedAt = dayjs('2025-06-07');
 
@@ -31,21 +26,14 @@ const getLocation = async (setLocation) => {
 
 export const HomePage = () => {
   const [location, setLocation] = useState(null);
+  const {mapVariantData: data, isLoading, error} = useMapVariantData({variant: "all"});
 
   useEffect(() => {
     getLocation(setLocation);
   }, []);
-
-  const { data, isLoading, error } = useQuery({
-    queryKey: ['clinics'],
-    queryFn: () =>
-      fetch('https://api.apify.com/v2/datasets/A9Iwh31T14DnUBqgY/items').then(
-        (res) => res.json(),
-      ),
-  });
+ 
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
-  console.log(data);
 
   return (
     <>
@@ -69,15 +57,6 @@ export const HomePage = () => {
           <MapContainer className="w-full h-full" center={location} zoom={11}>
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
             {data.map((item) => {
-              /** Get clinic types, when multiple, separate by a comma */
-              const clinicTypes = [
-                isEmergencyClinic(item) && 'Pohotovost',
-                isVetCareClinic(item) && 'Veterinární péče',
-                isHomeVetClinic(item) && 'Veterinář domů',
-              ]
-                .filter(Boolean)
-                .join(', ');
-
               return (
                 <Marker
                   key={item.placeId}
@@ -86,7 +65,7 @@ export const HomePage = () => {
                 >
                   <Popup>
                    <strong> {item.title}</strong> <br />
-                    {clinicTypes}
+                    {getClinicTypes(item)}
                   </Popup>
                 </Marker>
               );

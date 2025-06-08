@@ -20,11 +20,15 @@ const getLocation = async (setLocation) => {
     }
 }
 import { useQuery } from '@tanstack/react-query'
+import { useMapVariantData } from '@/lib/useMapVariantData'
 
 const testClinic = data[0]
 
 export const TestPage = () => {
     const [location, setLocation] = useState(null)
+    const {mapVariantData} = useMapVariantData({variant: "homeCare"})
+
+    console.log(mapVariantData)
 
     useEffect(() => {
         getLocation(setLocation)
@@ -42,7 +46,7 @@ export const TestPage = () => {
     return (
         <div className="w-screen h-screen relative">
             <div className="bg-white h-[10vh] w-full fixed top-0 z-20">Header</div>
-            {location && (
+            {location && data && (
                 <MapContainer
                     className="w-screen h-[90vh] fixed top-[10vh] z-0"
                     center={location}

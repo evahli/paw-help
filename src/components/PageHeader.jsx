@@ -19,7 +19,7 @@ const variantNames = {
 
 export const PageHeader = ({ variant }) => {
   return (
-    <div className="relative">
+    <div className="bg-white h-[20vh] w-screen fixed top-0 z-20">
       {/* To do: back to proper path */}
       <BackButton className="absolute top-0" path="/map" />
       <div className="flex flex-col text-center gap-4 p-4">
