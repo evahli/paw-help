@@ -26,6 +26,7 @@ export const useMapVariantData = ({ variant }) => {
       return data.filter((item) => isVetCareClinic(item));
     }
   }, [data, variant]);
+  
   return {
     mapVariantData: fileredData,
     isLoading,
