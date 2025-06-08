@@ -17,11 +17,13 @@ const variantNames = {
   homeCare: 'Veterinář domů',
 };
 
-export const PageHeader = ({ variant }) => {
+export const PageHeader = ({ variant, redirectToHome }) => {
+  const backButtonPath = redirectToHome ? "/" : `/map?variant=${variant}`;
+
   return (
     <div className="bg-white h-[20vh] w-screen fixed top-0 z-20">
       {/* To do: back to proper path */}
-      <BackButton className="absolute top-0" path="/map" />
+      <BackButton className="absolute top-0" path={backButtonPath} />
       <div className="flex flex-col text-center gap-4 p-4">
         <h1>PawHelp</h1>
         {/* To do: show proper varian based on categoryName */}

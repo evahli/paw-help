@@ -38,7 +38,7 @@ export const MapPage = () => {
 
   return (
     <div className="w-screen h-screen relative">
-      <PageHeader variant={pageVariant} />
+      <PageHeader variant={pageVariant} redirectToHome={true}/>
       {location && (
         <MapContainer
           className="w-screen h-[80vh] fixed top-[20vh] z-0"

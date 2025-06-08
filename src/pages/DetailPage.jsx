@@ -6,15 +6,16 @@ import { useClinicData } from '@/lib/useClinicData';
 export const DetailPage = () => {
   const [searchParams] = useSearchParams();
   const placeId = searchParams.get('placeId');
+  const variant = searchParams.get("variant");
   const { placeData, isLoading, error } = useClinicData(placeId);
 
   if (isLoading || !placeData) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
 
   return (
-    <div className='relative'>
-      <PageHeader categoryName={placeData.categoryName} />
-      <div className='h-[80vh] absolute top-[20vh]'>
+    <div className='h-screen overflow-auto'>
+      <PageHeader categoryName={placeData.categoryName} variant={variant}/>
+      <div className='pt-[20vh]'>
         <img
           src={placeData.imageUrl}
           alt="placeholder"
@@ -22,6 +23,7 @@ export const DetailPage = () => {
           className="rounded-md"
         />
         <DetailPageBody
+          variant={variant}
           title={placeData.title}
           // To do: Reviews component
           totalScore={placeData.totalScore}
@@ -34,7 +36,6 @@ export const DetailPage = () => {
           // To do: Show based on variant
           showCarIcon
         />
-        <span>{placeId}</span>
       </div>
     </div>
   );

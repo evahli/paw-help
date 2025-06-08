@@ -101,7 +101,7 @@ export const ClinicCard = ({ variant, clinicData }) => {
     <Card className={clinicCardVariants({ variant })}>
       <CardHeader>
         <CardTitle>
-          <Link to={`/detail?placeId=${clinicData.placeId}`}>{clinicData.title}</Link>
+          <Link to={`/detail?placeId=${clinicData.placeId}&variant=${variant}`}>{clinicData.title}</Link>
         </CardTitle>
         <CardDescription>{getClinicDescription(clinicData)}</CardDescription>
 
