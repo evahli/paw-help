@@ -73,7 +73,7 @@ const ClinicCardContent = ({ variant, clinicData }) => {
           )}
 
           {variant === 'emergency' ? <span>300m od vas</span> : ''}
-          {isOpen && variant === 'vetCare' ? <span>{getTodaysOpeningHours(clinicData.openingHours)?.hours}</span> : ''}
+          {isOpen && variant === 'vetCare' ? <span>{getTodaysOpeningHours(clinicData.openingHours)?.hours.replace('to', '-')}</span> : ''}
         </div>
       )}
     </div>
