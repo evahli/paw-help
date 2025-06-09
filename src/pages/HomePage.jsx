@@ -31,14 +31,14 @@ export const HomePage = () => {
         <h1>PawHelp</h1>
         <h2>Hledám</h2>
       </div>
-      <div className="flex flex-col gap-2 p-4">
-        <Button variant="emergency" to="/map?variant=emergency">
+      <div className="flex flex-col gap-2 p-4 items-center">
+        <Button variant="emergency" to="/map?variant=emergency" className="w-full max-w-xs">
           Veterinární pohotovost
         </Button>
-        <Button variant="vetCare" to="/map?variant=vetCare">
+        <Button variant="vetCare" to="/map?variant=vetCare" className="w-full max-w-xs">
           Veterinární péče
         </Button>
-        <Button variant="homeCare" to="/map?variant=homeCare">
+        <Button variant="homeCare" to="/map?variant=homeCare" className="w-full max-w-xs">
           Veterinář domů
         </Button>
       </div>
