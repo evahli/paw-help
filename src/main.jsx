@@ -7,6 +7,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { MapPage } from './pages/MapPage.jsx';
 import { DetailPage } from './pages/DetailPage.jsx';
 import { TestPage } from './pages/TestPage.jsx';
+import { ErrorPage } from './components/ErrorPage.jsx';
 
 // Create a client
 const queryClient = new QueryClient();
@@ -20,6 +21,7 @@ createRoot(document.getElementById('root')).render(
           <Route path="/map" element={<MapPage />} />
           <Route path="/detail" element={<DetailPage />} />
           <Route path="/test" element={<TestPage />} />
+          <Route path="*" element={<ErrorPage />} />
         </Routes>
       </BrowserRouter>
     </QueryClientProvider>
