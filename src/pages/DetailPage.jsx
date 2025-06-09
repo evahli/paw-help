@@ -3,6 +3,7 @@ import { DetailPageBody } from '../components/DetailPageBody';
 import { useSearchParams } from 'react-router';
 import { useClinicData } from '@/lib/useClinicData';
 import { getTodaysOpeningHours, isClinicOpen } from '@/lib/openingHours';
+import placeholder from '/images/placeholder.png';
 
 export const DetailPage = () => {
   const [searchParams] = useSearchParams();
@@ -20,7 +21,7 @@ export const DetailPage = () => {
       <PageHeader categoryName={placeData.categoryName} variant={variant}/>
       <div className='pt-[20vh] p-5'>
         <img
-          src={placeData.imageUrl}
+          src={placeData.imageUrl ? placeData.imageUrl : placeholder}
           alt="placeholder"
           width="385px"
           className="rounded-md"
