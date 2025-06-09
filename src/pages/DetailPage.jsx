@@ -21,8 +21,9 @@ export const DetailPage = () => {
       <PageHeader categoryName={placeData.categoryName} variant={variant}/>
       <div className='pt-[20vh] p-5'>
         <img
-          src={placeData.imageUrl ? placeData.imageUrl : placeholder}
-          alt="placeholder"
+          // to be checked again
+          src={placeData.imageUrl || placeholder}
+          alt="detail page image"
           width="385px"
           className="rounded-md"
         />
