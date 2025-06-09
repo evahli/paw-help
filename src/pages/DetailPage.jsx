@@ -18,7 +18,7 @@ export const DetailPage = () => {
   return (
     <div className='h-screen overflow-auto'>
       <PageHeader categoryName={placeData.categoryName} variant={variant}/>
-      <div className='pt-[20vh]'>
+      <div className='pt-[20vh] p-5'>
         <img
           src={placeData.imageUrl}
           alt="placeholder"

@@ -18,7 +18,7 @@ export const DetailPageBody = ({
 }) => {
   return (
     <div>
-      <div className="flex flex-col gap-2 mb-8 mt-8">
+      <div className="flex flex-col gap-2 mb-6 mt-6">
         <h2 className="text-left">{title}</h2>
         <div className="flex flex-row justify-between">
           <div className="flex flex-col gap-2">
@@ -38,9 +38,9 @@ export const DetailPageBody = ({
         </div>
       </div>
       <div className="flex flex-col gap-4">
-        <div className="flex flex-row gap-4">
-          <div className="w-6">
-            <img src={pin} alt="pin" />
+        <div className="flex flex-row gap-3 items-center">
+          <div className="w-10">
+            <img src={pin} alt="pin"/>
           </div>
           <p>{address}</p>
         </div>
