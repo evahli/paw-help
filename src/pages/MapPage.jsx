@@ -51,7 +51,7 @@ export const MapPage = () => {
       <PageHeader variant={pageVariant} redirectToHome={true} />
       {location && (
         <MapContainer
-          className="w-screen h-[80vh] fixed top-[20vh] z-0"
+          className="w-screen h-[80vh] top-[20vh] fixed z-0"
           center={[location.latitude, location.longitude]}
           zoom={13}
         >
@@ -78,7 +78,7 @@ export const MapPage = () => {
           ></Marker>
         </MapContainer>
       )}
-      <div className="absolute top-[80vh] w-full p-4">
+      <div className="absolute top-[80vh] sm:top-[20vh] w-full sm:max-w-md p-4 sm:ml-8">
         <div className="flex flex-col gap-2">
           {filteredData.map((item) => (
             <ClinicCard
