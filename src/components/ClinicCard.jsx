@@ -99,7 +99,7 @@ const ClinicCardContent = ({ variant, clinicData }) => {
 
           {isOpen && variant === 'vetCare' ? (
             <span>
-              {getTodaysOpeningHours(clinicData.openingHours)?.hours.replace(
+              {getTodaysOpeningHours(clinicData.openingHours)?.hours.replaceAll(
                 'to',
                 '-',
               )}
