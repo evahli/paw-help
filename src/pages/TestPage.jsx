@@ -16,9 +16,6 @@ export const TestPage = () => {
     const [location, setLocation] = useState(null)
     const {mapVariantData} = useMapVariantData({variant: "homeCare"})
   
-
-    console.log(mapVariantData)
-
     useEffect(() => {
         getLocation(setLocation)
     }, [])
@@ -30,7 +27,6 @@ export const TestPage = () => {
                 res.json()
             ),
     })
-    console.log(data)
 
     return (
         <div className="w-screen h-screen relative">
