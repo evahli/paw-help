@@ -4,6 +4,7 @@ import { useSearchParams } from 'react-router';
 import { useClinicData } from '@/lib/useClinicData';
 import { getTodaysOpeningHours, isClinicOpen } from '@/lib/openingHours';
 import placeholder from '/images/placeholder.png';
+import { LoadingScreen } from '@/components/LoadingScreen';
 
 export const DetailPage = () => {
   const [searchParams] = useSearchParams();
@@ -11,7 +12,7 @@ export const DetailPage = () => {
   const variant = searchParams.get("variant");
   const { placeData, isLoading, error } = useClinicData(placeId);
 
-  if (isLoading || !placeData) return <div>Loading...</div>;
+  if (isLoading || !placeData) return <LoadingScreen />;
   if (error) return <div>Error: {error.message}</div>;
 
   const isOpen = isClinicOpen(placeData.openingHours);

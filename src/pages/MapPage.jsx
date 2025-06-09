@@ -9,6 +9,8 @@ import { useMapVariantData } from '@/lib/useMapVariantData';
 import { getLocation } from '@/lib/location';
 import { getDistance } from 'geolib';
 import { isClinicOpen } from '@/lib/openingHours';
+import { LoadingScreen } from '@/components/LoadingScreen';
+
 
 export const MapPage = () => {
   const [location, setLocation] = useState(null);
@@ -24,7 +26,7 @@ export const MapPage = () => {
     getLocation(setLocation);
   }, []);
   /** To do: make it nicer */
-  if (isLoading || !data) return <div>Loading...</div>;
+  if (isLoading || !data) return <LoadingScreen />;
   if (error) return <div>Error: {error.message}</div>;
   
   const sortedData = location 

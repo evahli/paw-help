@@ -7,6 +7,8 @@ import dayjs from 'dayjs';
 import { getClinicTypes } from '@/lib/utils';
 import { useMapVariantData } from '@/lib/useMapVariantData';
 import { getLocation } from '@/lib/location';
+import { LoadingScreen } from '@/components/LoadingScreen';
+
 
 const lastEditedAt = dayjs('2025-06-07');
 
@@ -22,7 +24,7 @@ export const HomePage = () => {
     getLocation(setLocation);
   }, []);
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <LoadingScreen />;
   if (error) return <div>Error: {error.message}</div>;
 
   return (
