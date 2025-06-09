@@ -4,10 +4,12 @@ import ic_round_phone from '../assets/ic_round_phone.svg';
 import pin from '../assets/pin.svg';
 import car from '../assets/car.svg';
 import { Button } from '../components/ui/button';
+import { Reviews } from './Reviews';
 
 export const DetailPageBody = ({
   title,
   totalScore,
+  reviewsCount,
   categoryName,
   address,
   openingHours,
@@ -22,7 +24,7 @@ export const DetailPageBody = ({
         <h2 className="text-left">{title}</h2>
         <div className="flex flex-row justify-between">
           <div className="flex flex-col gap-2">
-            <h3>{totalScore}</h3>
+            <Reviews totalScore={totalScore} reviewsCount={reviewsCount}/>
             <h3>{categoryName}</h3>
           </div>
           {address && showCarIcon && (
@@ -35,7 +37,7 @@ export const DetailPageBody = ({
       <div className="flex flex-col gap-4">
         {address ? (
           <div className="flex flex-row gap-3 items-center">
-            <div className="w-10">
+            <div className="w-8">
               <img src={pin} alt="pin" />
             </div>
             <p>{address}</p>

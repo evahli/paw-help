@@ -33,6 +33,7 @@ export const DetailPage = () => {
           title={placeData.title}
           // To do: Reviews component
           totalScore={placeData.totalScore}
+          reviewsCount={placeData.reviewsCount}
           categoryName={placeData.categoryName}
           address={placeData.address}
           openingHours={ isOpen ? <span>
