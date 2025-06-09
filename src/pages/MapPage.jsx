@@ -49,7 +49,7 @@ export const MapPage = () => {
   })
 
   return (
-    <div className="w-screen h-screen relative">
+    <div className="w-screen h-screen relative sm:flex sm:flex-row-reverse">
       <PageHeader variant={pageVariant} redirectToHome={true} />
       {location && (
         <MapContainer
@@ -80,8 +80,8 @@ export const MapPage = () => {
           ></Marker>
         </MapContainer>
       )}
-      <div className="absolute top-[80vh] sm:top-[20vh] w-full sm:max-w-md p-4 sm:ml-8">
-        <div className="flex flex-col gap-2">
+      <div className="absolute top-[80vh] sm:top-[20vh] w-full sm:max-w-md p-4 sm:p-0 sm:ml-0 sm:pl-0">
+        <div className="flex flex-col gap-2 sm:gap-0">
           {filteredData.map((item) => (
             <ClinicCard
               clinicData={item}
