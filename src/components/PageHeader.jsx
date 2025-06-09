@@ -22,12 +22,10 @@ export const PageHeader = ({ variant, redirectToHome }) => {
 
   return (
     <div className="bg-white h-[20vh] w-screen fixed top-0 z-20">
-      {/* To do: back to proper path */}
       <BackButton className="absolute top-0" path={backButtonPath} />
-      <div className="flex flex-col text-center gap-4 p-4">
+      <div className="flex flex-col text-center items-center gap-4 p-4">
         <h1>PawHelp</h1>
-        {/* To do: show proper varian based on categoryName */}
-        <Button variant={variant}>{variantNames[variant]}</Button>
+        <Button className="w-full max-w-xs" variant={variant}>{variantNames[variant]}</Button>
       </div>
     </div>
   );
