@@ -25,43 +25,54 @@ export const DetailPageBody = ({
             <h3>{totalScore}</h3>
             <h3>{categoryName}</h3>
           </div>
-          {showCarIcon && (
+          {address && showCarIcon && (
             <div>
-              <Button
-                icon={car}
-                variant={variant}
-                size="icon"
-              >
-              </Button>
+              <Button icon={car} variant={variant} size="icon"></Button>
             </div>
           )}
         </div>
       </div>
       <div className="flex flex-col gap-4">
-        <div className="flex flex-row gap-3 items-center">
-          <div className="w-10">
-            <img src={pin} alt="pin"/>
+        {address ? (
+          <div className="flex flex-row gap-3 items-center">
+            <div className="w-10">
+              <img src={pin} alt="pin" />
+            </div>
+            <p>{address}</p>
           </div>
-          <p>{address}</p>
-        </div>
-        <div className="flex flex-row gap-4">
-          <div className="w-6">
-            <img src={carbon_time} alt="carbon_time" />
+        ) : (
+          ''
+        )}
+        {openingHours ? (
+          <div className="flex flex-row gap-4">
+            <div className="w-6">
+              <img src={carbon_time} alt="carbon_time" />
+            </div>
+            <p>{openingHours}</p>
           </div>
-          <p>{openingHours}</p>
-        </div>
-        <div className="flex flex-row gap-4">
-          <div className="w-6">
-            <img src={famicons_earth} alt="famicons_earth" />
+        ) : (
+          ''
+        )}
+        {website ? (
+          <div className="flex flex-row gap-4">
+            <div className="w-6">
+              <img src={famicons_earth} alt="famicons_earth" />
+            </div>
+            <p>{website}</p>
           </div>
-          <p>{website}</p>
-        </div>
-        <div className="flex flex-row gap-4 items-center">
-          <div className="w-6">
-            <img src={ic_round_phone} alt="ic_round_phone" />
+        ) : (
+          ''
+        )}
+        {phone ? (
+          <div className="flex flex-row gap-4 items-center">
+            <div className="w-6">
+              <img src={ic_round_phone} alt="ic_round_phone" />
+            </div>
+            <a href="tel:+420777123456">{phone}</a>
           </div>
-          <a href="tel:+420777123456">{phone}</a>
-        </div>
+        ) : (
+          ''
+        )}
       </div>
     </div>
   );
