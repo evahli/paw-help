@@ -46,6 +46,7 @@ export const DetailPage = () => {
                     }
           website={placeData.website}
           phone={placeData.phone}
+          to={`https://maps.google.com/maps?daddr=${placeData.location.lat},${placeData.location.lng}`}
           // To do: Show based on variant
           showCarIcon
         />
