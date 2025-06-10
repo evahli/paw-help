@@ -110,7 +110,7 @@ export const HomePage = () => {
         </div>
       )}
       <footer className=" text-gray-600 text-xs px-2 py-1">
-        <div className="max-w-4xl mx-auto leading-tight">
+        <div className=" mx-auto leading-tight">
           <p>
             😽Tohle je finální projekt Evy a Káji z Digitální Akademie Web 2025 od{' '}
             <a
