@@ -17,6 +17,7 @@ export const DetailPageBody = ({
   phone,
   showCarIcon,
   variant,
+  to,
 }) => {
   return (
     <div>
@@ -29,7 +30,7 @@ export const DetailPageBody = ({
           </div>
           {address && showCarIcon && (
             <div>
-              <Button icon={car} variant={variant} size="icon"></Button>
+              <Button icon={car} variant={variant} size="icon" to={to}></Button>
             </div>
           )}
         </div>
@@ -60,7 +61,7 @@ export const DetailPageBody = ({
             <div className="w-6">
               <img src={famicons_earth} alt="famicons_earth" />
             </div>
-            <p>{website}</p>
+            <p><a href={website} target='_blank'>{website}</a></p>
           </div>
         ) : (
           ''
