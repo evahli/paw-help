@@ -61,7 +61,7 @@ export const DetailPageBody = ({
             <div className="w-6">
               <img src={famicons_earth} alt="famicons_earth" />
             </div>
-            <p>{website}</p>
+            <p><a href={website} target='_blank'>{website}</a></p>
           </div>
         ) : (
           ''
