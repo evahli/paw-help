@@ -25,7 +25,6 @@ export const MapPage = () => {
   useEffect(() => {
     getLocation(setLocation);
   }, []);
-  /** To do: make it nicer */
   if (isLoading || !data) return <LoadingScreen />;
   if (error) return <div>Error: {error.message}</div>;
   

@@ -22,7 +22,6 @@ export const DetailPage = () => {
       <PageHeader categoryName={placeData.categoryName} variant={variant}/>
       <div className='pt-[20vh] p-5'>
         <img
-          // to be checked again
           src={placeData.imageUrl || placeholder}
           alt="detail page image"
           width="385px"
@@ -31,7 +30,6 @@ export const DetailPage = () => {
         <DetailPageBody
           variant={variant}
           title={placeData.title}
-          // To do: Reviews component
           totalScore={placeData.totalScore}
           reviewsCount={placeData.reviewsCount}
           categoryName={placeData.categoryName}
@@ -47,7 +45,6 @@ export const DetailPage = () => {
           website={placeData.website}
           phone={placeData.phone}
           to={`https://maps.google.com/maps?daddr=${placeData.location.lat},${placeData.location.lng}`}
-          // To do: Show based on variant
           showCarIcon
         />
       </div>
