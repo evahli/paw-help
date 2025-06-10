@@ -31,7 +31,7 @@ export const HomePage = () => {
     <div className='h-screen overflow-y-auto flex flex-col justify-between'>
       <div className="flex flex-col text-center gap-2 pt-4">
         <h1>PawHelp</h1>
-        <h2>Hledám</h2>
+        <h3>Co hledám?</h3>
       </div>
       <div className="flex flex-col gap-2 p-4 items-center">
         <Button variant="emergency" to="/map?variant=emergency" className="w-full max-w-xs">
