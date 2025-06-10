@@ -11,7 +11,6 @@ import { getDistance } from 'geolib';
 import { isClinicOpen } from '@/lib/openingHours';
 import { LoadingScreen } from '@/components/LoadingScreen';
 
-
 export const MapPage = () => {
   const [location, setLocation] = useState(null);
   const [searchParams] = useSearchParams();
@@ -27,30 +26,31 @@ export const MapPage = () => {
   }, []);
   if (isLoading || !data) return <LoadingScreen />;
   if (error) return <div>Error: {error.message}</div>;
-  
-  const sortedData = location 
-    ? data.map((item) => ({
+
+  const sortedData = location
+    ? data
+        .map((item) => ({
           ...item,
           distance: getDistance(
             { latitude: location.latitude, longitude: location.longitude },
-            { latitude: item.location.lat, longitude: item.location.lng }
-          )
+            { latitude: item.location.lat, longitude: item.location.lng },
+          ),
         }))
         .sort((a, b) => a.distance - b.distance)
     : data;
 
   const filteredData = sortedData.filter((item) => {
-    if (pageVariant === "emergency") {
-      return isClinicOpen(item.openingHours)
+    if (pageVariant === 'emergency') {
+      return isClinicOpen(item.openingHours);
     } else {
       return true;
     }
-  })
+  });
 
   return (
     <div className="w-screen h-screen relative sm:flex sm:flex-row-reverse">
       <PageHeader variant={pageVariant} redirectToHome={true} />
-      {location && (
+      {location ? (
         <MapContainer
           className="w-screen h-[80vh] top-[20vh] fixed z-0"
           center={[location.latitude, location.longitude]}
@@ -77,6 +77,30 @@ export const MapPage = () => {
             position={[location.latitude, location.longitude]}
             icon={userLocationIcon}
           ></Marker>
+        </MapContainer>
+      ) : (
+        <MapContainer
+          className="w-screen h-[80vh] top-[20vh] fixed z-0"
+          center={[50.0857, 14.4195]}
+          zoom={13}
+        >
+          <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+          {filteredData.map((item) => (
+            <Marker
+              key={item.placeId}
+              position={[item.location.lat, item.location.lng]}
+              icon={getClinicIcon(item)}
+            >
+              <Popup>
+                <Link
+                  to={`/detail?placeId=${item.placeId}&variant=${pageVariant}`}
+                >
+                  <strong>{item.title}</strong> <br />
+                </Link>
+                {getClinicTypes(item)}
+              </Popup>
+            </Marker>
+          ))}
         </MapContainer>
       )}
       <div className="absolute top-[80vh] sm:top-[20vh] w-full sm:max-w-md p-4 sm:p-0 sm:ml-0 sm:pl-0">

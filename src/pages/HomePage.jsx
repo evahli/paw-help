@@ -73,7 +73,31 @@ export const HomePage = () => {
           </MapContainer>
         </div>
       ) : (
-        <p> No location provided, map cannot be rendered</p>
+        ( // if location disable in browser, display centered in ceter of Prague
+          <div className="h-[50vh] w-screen">
+            <MapContainer
+              className="w-full h-full"
+              center={[50.0857, 14.4195]}
+              zoom={13}
+            >
+              <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+              {data.map((item) => {
+                return (
+                  <Marker
+                    key={item.placeId}
+                    position={[item.location.lat, item.location.lng]}
+                    icon={getClinicIcon(item)}
+                  >
+                    <Popup>
+                      <strong> {item.title}</strong> <br />
+                      {getClinicTypes(item)}
+                    </Popup>
+                  </Marker>
+                );
+              })}
+            </MapContainer>
+          </div>
+        )
       )}
       <div className="p-2">
         <p className="italic font-medium text-xs">
