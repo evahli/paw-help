@@ -20,7 +20,7 @@ export const DetailPageBody = ({
   to,
 }) => {
   return (
-    <div>
+    <div className='sm:max-w-max'>
       <div className="flex flex-col gap-2 mb-6 mt-6">
         <h2 className="text-left">{title}</h2>
         <div className="flex flex-row justify-between">

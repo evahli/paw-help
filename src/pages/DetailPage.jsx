@@ -20,7 +20,7 @@ export const DetailPage = () => {
   return (
     <div className='h-screen overflow-auto'>
       <PageHeader categoryName={placeData.categoryName} variant={variant}/>
-      <div className='pt-[20vh] p-5'>
+      <div className='pt-[20vh] p-5 sm:flex sm:flex-row sm:justify-evenly sm:items-center sm:pt-[30vh]'>
         <img
           src={placeData.imageUrl || placeholder}
           alt="detail page image"
