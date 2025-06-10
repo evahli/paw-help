@@ -8,7 +8,7 @@ export const ErrorPage = () => {
         <img
           src={errorImg}
           alt="Error cat"
-          className="absolute inset-0 w-full h-full object-cover opacity-40"
+          className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="relative z-10 flex flex-col items-center justify-end h-full pb-20 px-4">
           <Button>
